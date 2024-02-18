@@ -1,5 +1,5 @@
 name: Pylint
-
+# build on every push to the main branch
 on: [push]
 
 jobs:
