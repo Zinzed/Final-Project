@@ -10,6 +10,6 @@ class project(models.Model):
     explanation = models.CharField(max_length=1000)
 
 
-class template1(models.Model):
+class template(models.Model):
     project1 = project
 

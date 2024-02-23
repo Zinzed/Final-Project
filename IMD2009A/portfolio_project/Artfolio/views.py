@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import template1
-from .forms import template1Form
+from .models import template
+from .forms import templateForm
 # Create your views here.
 
 
@@ -10,29 +10,29 @@ def main(request):
 
 
 def selectTemplate(request):
-    template = template1.objects.first()
-    if template is None:
+    myTemplate = template.objects.first()
+    if myTemplate is None:
         return render(request, 'selectTemplate.html')
     else:
-        return redirect('editTemplate1')
+        return redirect('editTemplate')
 
 
-def editTemplate1(request):
-    template = template1.objects.first()
-    form = template1Form(instance=template)
+def editTemplate(request):
+    myTemplate = template.objects.first()
+    form = templateForm(instance=myTemplate)
     if request.method == "POST":
-        form = template1Form(request.POST, instance=template)
+        form = templateForm(request.POST, instance=myTemplate)
         if form.is_valid():
             form.save()
-            return redirect("selectTemplate")
-    return render(request, "editTemplate1.html", {"template1Form": form})
+            return redirect('selectTemplate')
+    return render(request, 'editTemplate.html', {'templateForm': form})
 
 
 def saveTemplate(request):
     if request.method == "POST":
-        form = template1Form(request.POST)
+        form = templateForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("main")
-    return render(request, "editTemplate1.html", {"template1Form": form})
+    return render(request, 'editTemplate.html', {'templateForm': form})
 
