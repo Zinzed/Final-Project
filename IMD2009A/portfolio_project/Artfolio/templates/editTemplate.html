@@ -5,11 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-{{ template.project1.title }}
 <form method="post">
     {% csrf_token %}
     {{templateForm}}
-    <button type="submit">Update</button>
+    <button type="submit">Save</button>
 </form>
 </body>
 </html>

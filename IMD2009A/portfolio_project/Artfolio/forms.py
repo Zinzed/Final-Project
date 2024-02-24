@@ -4,6 +4,6 @@ from .models import template
 
 class templateForm(forms.ModelForm):
     class Meta:
-        model = template.project1
-        fields = ['title',
+        model = template
+        fields = ['project1Title', 'project2Title',
                   ]
