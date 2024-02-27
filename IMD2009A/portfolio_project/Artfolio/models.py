@@ -20,6 +20,7 @@ class template(models.Model):
     p1ProgressCap1 = models.CharField(max_length=50, default="progress image 1 caption")
     p1ProgressCap2 = models.CharField(max_length=50, default="progress image 2 caption")
     p1ProgressCap3 = models.CharField(max_length=50, default="progress image 3 caption")
+    p1Explanation = models.CharField(max_length=300, default="short explanation of your design process")
 
     project2Title = models.CharField(max_length=100, default="Project 2 Title")
     p2FinalImg = models.ImageField
@@ -30,6 +31,7 @@ class template(models.Model):
     p2ProgressCap1 = models.CharField(max_length=50, default="progress image 1 caption")
     p2ProgressCap2 = models.CharField(max_length=50, default="progress image 2 caption")
     p2ProgressCap3 = models.CharField(max_length=50, default="progress image 3 caption")
+    p2Explanation = models.CharField(max_length=300, default="short explanation of your design process")
 
     project3Title = models.CharField(max_length=100, default="Project 3 Title")
     p3FinalImg = models.ImageField
@@ -40,6 +42,7 @@ class template(models.Model):
     p3ProgressCap1 = models.CharField(max_length=50, default="progress image 1 caption")
     p3ProgressCap2 = models.CharField(max_length=50, default="progress image 2 caption")
     p3ProgressCap3 = models.CharField(max_length=50, default="progress image 3 caption")
+    p3Explanation = models.CharField(max_length=300, default="short explanation of your design process")
 
     project4Title = models.CharField(max_length=100, default="Project 4 Title")
     p4FinalImg = models.ImageField
@@ -50,3 +53,4 @@ class template(models.Model):
     p4ProgressCap1 = models.CharField(max_length=50, default="progress image 1 caption")
     p4ProgressCap2 = models.CharField(max_length=50, default="progress image 2 caption")
     p4ProgressCap3 = models.CharField(max_length=50, default="progress image 3 caption")
+    p4Explanation = models.CharField(max_length=300, default="short explanation of your design process")
