@@ -27,7 +27,7 @@ def selectTemplate(request):
 def newTemplate(request):
     form = templateForm()
     if request.method == "POST":
-        form = templateForm(request.POST)
+        form = templateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('main')
@@ -38,7 +38,7 @@ def editTemplate(request, templateId):
     myTemplate = template.objects.get(pk=templateId)
     form = templateForm(instance=myTemplate)
     if request.method == "POST":
-        form = templateForm(request.POST, instance=myTemplate)
+        form = templateForm(request.POST, request.FILES, instance=myTemplate)
         if form.is_valid():
             form.save()
             return redirect('main')
