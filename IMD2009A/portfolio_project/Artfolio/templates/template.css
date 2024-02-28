@@ -1,0 +1,147 @@
+.body
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/*Navigation Bar*/
+.header
+{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 7px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.header nav
+{
+    flex-grow: 0.95;
+}
+
+
+.nav
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+
+
+.nav li:nth-child(1)
+{
+    flex-grow: 0.05;
+}
+
+
+.nav a
+{
+    text-decoration: none;
+    color:black;
+    font-family: 'Gill Sans', serif;
+}
+
+
+.nav a:hover
+{
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    color:black;
+    font-family: 'Gill Sans', serif;
+}
+
+
+.personal
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+/*End of Navigation Bar*/
+
+/*Main*/
+.main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.main h1
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.instructions
+{
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', serif;
+    font-size: 20px;
+}
+
+.templates
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    list-style-type: none;
+    gap: 50px;
+}
+
+
+.option
+{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.tempTitle
+{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    list-style-type: none;
+    color:black;
+    font-family: 'Gill Sans', serif;
+    font-size: 25px;
+    padding: 20px;
+}
+
+
+.tempImg
+{
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 400px;
+}
+
+
+.descriptions
+{
+    display: flex;
+    padding-right: 15px;
+    padding-top: 10px;
+    justify-content: center;
+    font-family: 'Gill Sans', serif;
+}
+/*End of Main*/
+
+/*Footer*/
+/*End of Footer*/
