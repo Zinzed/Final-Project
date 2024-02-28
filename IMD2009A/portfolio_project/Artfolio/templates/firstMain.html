@@ -1,15 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
-    <h1>Welcome to Artfolio!</h1>
+    <!--Header section-->
+    <section>
+        <header class="header">
 
-    <a href="{% url 'selectTemplate' %}">
-        <button>Create your portfolio</button>
-    </a>
+            <nav>
+                <ul class="nav">
+                    <li>logo</li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Templates</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
+            </nav>
 
+            <personal>
+                <ul class="personal">
+                    <li><a href="">Settings</a></li>
+                    <li><a href="">Profile</a></li>
+                </ul>
+            </personal>
+
+        </header>
+    </section>
+
+    <main>
+       <div class = "wrapper">
+        <!--Profile bio section-->
+        <section>
+            <div class="profile">
+                <div class="container--profile">
+                    <div class="profile--flex">
+                        <div class="profile--flex--content">
+                            <h2>Username</h2>
+                            <div class="profile--placeholder"></div>
+                            <!--<img class="profile--photo" src="profile-photo.png" alt="Profile photo" />-->
+                            <p>Ontario, Canada</p>
+                            <p>Open to work</p>
+                            <a class="btn--edit--profile" href="#"><button>Edit Profile</button></a>
+                            <p class="summary">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                                possimus id hic ipsum, consequuntur magni facere dicta,
+                                laborum tempore illo ullam commodi odio est voluptatum
+                                placeat. Repellat praesentium qui quaerat.
+                            </p><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Portfolio section-->
+        <section>
+            <div class ="sub--section">
+                <header>
+                <div class="sub--header">
+                    <div class="container--sub--header">
+                        <!--<h2 class="sr-only">Sub navigation header</h2>-->
+
+                        <div class="sub--header--bar">
+                            <nav class="sub--header--bar--nav">
+                                <!--<h3 class="sr-only">Sub navigation</h3>-->
+                                <ul>
+                                    <li><a href="#" onclick="showContent(1); return false;">My Work</a></li>
+                                    <li><a href="#" onclick="showContent(2); return false;">Resume</a></li>
+                                    <li><a href="#" onclick="showContent(3); return false;">Contact me</a></li>
+                                </ul>
+                            </nav>
+
+
+                            <nav class="header--bar--nav">
+                                <!--<h3 class="sr-only">Sub navigation</h3>-->
+                                <a class="btn--copy--link" href="#">Copy Link</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header><br><br>
+
+            <!--My work section-->
+            <div id="content1">
+                <a class="btn--create--portfolio" href="{% url 'selectTemplate' %}"><button>Create your portfolio</button></a>
+            </div>
+
+            <!--Resume section-->
+            <div id="content2" style="display: none;">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="document" id="upload">Upload your resume:</label><br>
+                <input type="file" id="document" name="document" accept=".pdf, .doc, .docx"><br><br>
+                <!-- Accept attribute restricts the file types that can be uploaded -->
+                <input type="submit" value="Upload">
+                </form><br><br>
+            </div>
+
+            <!--Contact me section-->
+            <div id="content3" style="display: none;">
+                <form action="/submit-form" method="POST">
+                <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+
+                <input type="text" id="email" name="email" placeholder="Email" required><br><br>
+
+                <textarea id="message" name="message" placeholder="Message" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Send">
+            </form><br><br>
+            </div>
+                <br><br>
+            </div>
+        </section><br><br>
+    </div>
+    </main>
+
+
+    <!--Footer section-->
+    <footer>
+        <div class="footer">
+            <!--1st div-->
+            <div class="container--footer">
+                <!--<h2 class="sr-only">Site footer</h2>-->
+                <!--2nd div-->
+                <nav class="footer--nav">
+                    <!--<h3 class="sr-only">Footer navigation</h3>-->
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Edit Template</a></li>
+                        <li><a href="">Portfolio</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
+        </div><br><br>
+    </footer>
 </body>
 </html>
