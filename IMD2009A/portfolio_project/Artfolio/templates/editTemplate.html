@@ -39,7 +39,7 @@
         </div>
 
 
-        <form id="templateForm" method="post" action= "{% url 'selectTemplate' %}">
+        <form id="templateForm" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{templateForm}}
             <button type="submit">Save</button>
