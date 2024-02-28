@@ -2,13 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>New Template</title>
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    {{templateForm}}
-    <button type="submit">Create</button>
-</form>
+
+    <header class="header">
+
+        <nav>
+            <ul class="nav">
+                <li>logo</li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Templates</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </nav>
+
+        <personal>
+            <ul class="personal">
+                <li><a href="">Settings</a></li>
+                <li><a href="">Profile</a></li>
+            </ul>
+        </personal>
+
+    </header>
+
+    <div>
+        <h1>You have chosen to edit template one</h1>
+        <a href="">Cancel</a>
+        <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        {{templateForm}}
+        <button type="submit">Create</button>
+    </form>
 </body>
 </html>
