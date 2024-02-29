@@ -1,14 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Welcome back to Artfolio!</h1>
+<html>
 
-    <a href="{% url 'selectTemplate' %}">
-        <button>Edit portfolio</button>
-    </a>
+<head>
+    <title>My Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--CSS-->
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Gill Sans', sans-serif;
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    /*Navigation Bar*/
+.header
+{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 7px;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+.header nav
+{
+    flex-grow: 0.95;
+}
+
+
+.nav
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+
+
+.nav li:nth-child(1)
+{
+    flex-grow: 0.05;
+}
+
+
+.nav a
+{
+    text-decoration: none;
+    color:black;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+
+.nav a:hover
+{
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    color:black;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+
+.personal
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+/*End of Navigation Bar*/
+
+
+    .profile--placeholder{
+        height: 100px;
+        width: 100px;
+        background-color: #F7F7F7;
+        border-radius: 50%;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+    }
+
+    /*.wrapper{
+        display: grid;
+        gap: 0;
+        grid-template-areas: "profile sub--section sub--section sub--section";
+        grid-template-columns: repeat(2,1fr);
+    }*/
+
+    .profile{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .summary {
+        width: 50%;
+    }
+
+    button {
+        background-color: #44bba4;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: #5ba597;
+        cursor: pointer;
+    }
+
+    .sub--header {
+        margin: 0;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .sub--header--bar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
+         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .sub--header--bar--nav {
+        list-style-type: none;
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sub--header--bar--nav ul {
+        list-style-type: none;
+        display: flex;
+        padding-left: 0;
+    }
+
+    .sub--header--bar--nav ul li a {
+        text-decoration: none;
+        color: #000;
+        padding: 1rem;
+    }
+    .sub--header--bar--nav ul li a:hover {
+        text-decoration-line: underline;
+    }
+
+    .sub--section {
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .btn--copy--link {
+        background-color: #ffff;
+        color: #000000;
+        border-radius: 30px;
+        padding: 10px 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-style: solid;
+        text-decoration: none;
+        transition-duration: 0.4s;
+    }
+
+    .btn--copy--link:hover {
+        background-color: #000;
+        color: #fff;
+        border-style: solid;
+    }
+
+    .btn--edit--portfolio{
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    input[type=text] {
+        background-color:#F7F7F7;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+        margin: 5px 20px;
+    }
+
+    #message {
+        background-color:#F7F7F7;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+        margin: 5px 20px;
+        font-family: 'Gill Sans', sans-serif;
+    }
+
+    #upload {
+        margin: 5px 20px;
+        padding: 10px 20px;
+    }
+
+    input[type=file]
+    {
+        margin: 5px 20px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        /*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+    }
+
+    input[type=submit] {
+        margin: 5px 20px;
+        background-color: #000;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition-duration: 0.4s;
+    }
+
+    input[type=submit]:hover {
+        background-color: #2d2d2d;
+        cursor: pointer;
+    }
+
+    /*Footer*/
+    footer {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 10px;
+        text-align: center;
+        width: 100%;
+        font-family: 'Gill Sans', sans-serif;
+    }
+
+    .footer--nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #fff;
+        gap: 1rem;
+        list-style-type: none;
+        font-family: 'Gill Sans', sans-serif;
+    }
+
+    .footer--nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer--nav ul li a:hover {
+        text-decoration-line: underline;
+    }
+    /*End of Footer*/
+</style>
+</head>
+
+<body>
+    <!--Header section-->
+    <section>
+        <header class="header">
+
+            <nav>
+                <ul class="nav">
+                    <li>logo</li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Templates</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
+            </nav>
+
+            <personal>
+                <ul class="personal">
+                    <li><a href="">Settings</a></li>
+                    <li><a href="">Profile</a></li>
+                </ul>
+            </personal>
+
+        </header>
+    </section>
+
+    <main>
+       <div class = "wrapper">
+        <!--Profile bio section-->
+        <section>
+            <div class="profile">
+                <div class="container--profile">
+                    <div class="profile--flex">
+                        <div class="profile--flex--content">
+                            <h2>Username</h2>
+                            <div class="profile--placeholder"></div>
+                            <!--<img class="profile--photo" src="profile-photo.png" alt="Profile photo" />-->
+                            <p>Ontario, Canada</p>
+                            <p>Open to work</p>
+                            <a class="btn--edit--profile" href="#"><button>Edit Profile</button></a>
+                            <p class="summary">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                                possimus id hic ipsum, consequuntur magni facere dicta,
+                                laborum tempore illo ullam commodi odio est voluptatum
+                                placeat. Repellat praesentium qui quaerat.
+                            </p><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Portfolio section-->
+        <section>
+            <div class ="sub--section">
+                <header>
+                <div class="sub--header">
+                    <div class="container--sub--header">
+                        <!--<h2 class="sr-only">Sub navigation header</h2>-->
+
+                        <div class="sub--header--bar">
+                            <nav class="sub--header--bar--nav">
+                                <!--<h3 class="sr-only">Sub navigation</h3>-->
+                                <ul>
+                                    <li><a href="#" onclick="showContent(1); return false;">My Work</a></li>
+                                    <li><a href="#" onclick="showContent(2); return false;">Resume</a></li>
+                                    <li><a href="#" onclick="showContent(3); return false;">Contact me</a></li>
+                                </ul>
+                            </nav>
+
+
+                            <nav class="sub--header--bar--nav">
+                                <!--<h3 class="sr-only">Sub navigation</h3>-->
+                                <a class="btn--copy--link" href="#">Copy Link</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header><br><br>
+
+            <!--My work section-->
+            <div id="content1">
+                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><button>Edit portfolio</button></a>
+            </div>
+
+            <!--Resume section-->
+            <div id="content2" style="display: none;">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="document" id="upload">Upload your resume:</label><br>
+                <input type="file" id="document" name="document" accept=".pdf, .doc, .docx"><br><br>
+                <!-- Accept attribute restricts the file types that can be uploaded -->
+                <input type="submit" value="Upload">
+                </form><br><br>
+            </div>
+
+            <!--Contact me section-->
+            <div id="content3" style="display: none;">
+                <form action="/submit-form" method="POST">
+                <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+
+                <input type="text" id="email" name="email" placeholder="Email" required><br><br>
+
+                <textarea id="message" name="message" placeholder="Message" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Send">
+            </form><br><br>
+            </div>
+                <br><br>
+            </div>
+        </section><br><br>
+    </div>
+    </main>
+
+
+    <!--Footer section-->
+    <footer>
+        <div class="footer">
+            <!--1st div-->
+            <div class="container--footer">
+                <!--<h2 class="sr-only">Site footer</h2>-->
+                <!--2nd div-->
+                <nav class="footer--nav">
+                    <!--<h3 class="sr-only">Footer navigation</h3>-->
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Edit Template</a></li>
+                        <li><a href="">Portfolio</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
+        </div><br><br>
+    </footer>
+<!--JavaScript-->
+<script>
+    function showContent(contentNumber) {
+      // Hide all content divs
+      var allContentDivs = document.querySelectorAll('[id^="content"]');
+      allContentDivs.forEach(function(div) {
+        div.style.display = 'none';
+      });
+
+      // Show the selected content div
+      var selectedContentDiv = document.getElementById('content' + contentNumber);
+      selectedContentDiv.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
