@@ -39,11 +39,13 @@
         </div>
 
 
-        <form id="templateForm" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{templateForm}}
-            <button type="submit">Save</button>
+            {{ templateForm }}
+
+            <input type="submit" name="saveChanges" value="Save Changes">
         </form>
+
 
     </body>
 

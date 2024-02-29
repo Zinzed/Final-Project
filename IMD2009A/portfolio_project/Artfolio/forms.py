@@ -11,3 +11,4 @@ class templateForm(forms.ModelForm):
             'project3Title', 'p3FinalImg', 'p3FinalCap', 'p3ProgressImg1', 'p3ProgressCap1', 'p3ProgressImg2', 'p3ProgressCap2', 'p3ProgressImg3', 'p3ProgressCap3', 'p3Explanation',
             'project4Title', 'p4FinalImg', 'p4FinalCap', 'p4ProgressImg1', 'p4ProgressCap1', 'p4ProgressImg2', 'p4ProgressCap2', 'p4ProgressImg3', 'p4ProgressCap3', 'p4Explanation',
         ]
+
