@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import template
 from .forms import templateForm
+
+
 # Create your views here.
 
 
@@ -37,11 +39,15 @@ def newTemplate(request):
 def editTemplate(request, templateId):
     myTemplate = template.objects.get(pk=templateId)
     form = templateForm(instance=myTemplate)
+
     if request.method == "POST":
         form = templateForm(request.POST, request.FILES, instance=myTemplate)
+
         if form.is_valid():
             form.save()
             return redirect('main')
+
     return render(request, 'editTemplate.html', {'templateForm': form})
+
 
 
