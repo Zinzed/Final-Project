@@ -329,7 +329,6 @@
                                 <!--<h3 class="sr-only">Sub navigation</h3>-->
                                 <ul>
                                     <li><a href="#" onclick="showContent(1); return false;">My Work</a></li>
-                                    <li><a href="#" onclick="showContent(2); return false;">Resume</a></li>
                                     <li><a href="#" onclick="showContent(3); return false;">Contact me</a></li>
                                 </ul>
                             </nav>
@@ -349,15 +348,6 @@
                 <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><button>Edit portfolio</button></a>
             </div>
 
-            <!--Resume section-->
-            <div id="content2" style="display: none;">
-                <form action="/upload" method="POST" enctype="multipart/form-data">
-                <label for="document" id="upload">Upload your resume:</label><br>
-                <input type="file" id="document" name="document" accept=".pdf, .doc, .docx"><br><br>
-                <!-- Accept attribute restricts the file types that can be uploaded -->
-                <input type="submit" value="Upload">
-                </form><br><br>
-            </div>
 
             <!--Contact me section-->
             <div id="content3" style="display: none;">
