@@ -50,4 +50,5 @@ def editTemplate(request, templateId):
     return render(request, 'editTemplate.html', {'templateForm': form})
 
 
-
+def explore (request):
+    return render(request, 'explore.html')
