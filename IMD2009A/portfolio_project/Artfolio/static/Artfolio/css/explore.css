@@ -1,0 +1,57 @@
+.header
+{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 7px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.header nav
+{
+    flex-grow: 0.95;
+}
+
+
+.nav
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+
+
+.nav li:nth-child(1)
+{
+    flex-grow: 0.05;
+}
+
+
+.nav a
+{
+    text-decoration: none;
+    color:black;
+    font-family: 'Gill Sans', serif;
+}
+
+
+.nav a:hover
+{
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    color:black;
+    font-family: 'Gill Sans', serif;
+}
+
+
+.personal
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+/*End of Navigation Bar*/
