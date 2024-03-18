@@ -26,18 +26,252 @@
             </ul>
         </personal>
 
+        <!--CSS-->
+        <style>
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body, h1, p, ul, li {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Gill Sans', sans-serif;
+                list-style-type: none;
+                text-decoration: none;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .container{
+                border-radius: 10px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                height: 500px;
+                width:90%;
+                overflow-y: auto;
+
+            }
+            .centered-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .final-image {
+                display: flex;
+                justify-content: center;
+            }
+
+            /* Text fields */
+            input[type=text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                border: none;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            /* Captions */
+            input[type=text]:nth-child(3){
+                font-size: 1rem;
+                font-weight: 400;
+
+            }
+            input[type=text]:nth-child(3n + 2){
+                font-size: 1rem;
+                font-weight: 400;
+
+            }
+
+            .progress-images {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            input[type=file] {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                text-align: center;
+                color: white;
+                }
+
+            .progress-image{
+                display: flex;
+                flex-direction: column;
+                margin: 1rem;
+            }
+
+
+
+            /* Buttons */
+            .cancel-link {
+                font-size: 1em;
+                background-color: #000;
+                color: #ffffff;
+                text-decoration: none;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 30px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                transition-duration: 0.4s;
+            }
+            .cancel-link:hover {
+                background-color: #2d2d2d;
+                cursor: pointer;
+            }
+
+            input::file-selector-button {
+                font-weight: 550;
+                padding: 0.5em;
+                border-radius: 3px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                background-color: #F7F7F7;
+                border: 2px dashed #44bba4;
+                width: 252px;
+                height: 252px;
+                transition-duration: 0.4s;
+            }
+            input::file-selector-button:hover {
+                background-color: #E8E8E8;
+                cursor: pointer;
+            }
+
+            button {
+                font-size: 1em;
+                background-color: #44bba4;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-weight: bold;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                transition-duration: 0.4s;
+                margin: 20px;
+                }
+
+            button:hover {
+                background-color: #5ba597;
+                cursor: pointer;
+                }
+
+        </style>
     </header>
 
     <div>
         <h1>You have chosen to edit template one</h1>
-        <a href="">Cancel</a>
+        <br>
         <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
+        <br>
+        <a href="{% url 'selectTemplate' %}" class="cancel-link">Cancel</a>
+        <br><br><br>
     </div>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{templateForm}}
-        <button type="submit">Create</button>
-    </form>
+    <div class = "container">
+       <form class="centered-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!--Project 1-->
+    <div class="project">
+            {{ templateForm.project1Title }}
+        <div class="final-image">
+            {{ templateForm.p1FinalImg }}
+        </div>
+        {{ templateForm.p1FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg1 }}
+                {{ templateForm.p1ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg2 }}
+                {{ templateForm.p1ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg3 }}
+                {{ templateForm.p1ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+
+    <!--Project 2-->
+    <div class="project">
+            {{ templateForm.project2Title }}
+        <div class="final-image">
+            {{ templateForm.p2FinalImg }}
+        </div>
+        {{ templateForm.p2FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg1 }}
+                {{ templateForm.p2ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg2 }}
+                {{ templateForm.p2ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg3 }}
+                {{ templateForm.p2ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+
+    <!--Project 3-->
+    <div class="project">
+            {{ templateForm.project3Title }}
+        <div class="final-image">
+            {{ templateForm.p3FinalImg }}
+        </div>
+        {{ templateForm.p3FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg1 }}
+                {{ templateForm.p3ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg2 }}
+                {{ templateForm.p3ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg3 }}
+                {{ templateForm.p3ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+           <button type="submit">Create</button>
+        </form>
+    </div>
+
+
+
 </body>
 </html>
