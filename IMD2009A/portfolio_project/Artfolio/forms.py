@@ -1,5 +1,22 @@
 from django import forms
 from .models import template
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
+from django.forms.widgets import PasswordInput, TextInput
+
+#Registration
+class userForm(UserCreationForm):
+    class Meta:
+
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
+#Authentication
+
+class loginForm(AuthenticationForm):
+
+    username = forms.CharField(widget=TextInput())
+    password = forms.CharField(widget=PasswordInput())
 
 
 class templateForm(forms.ModelForm):
@@ -11,4 +28,5 @@ class templateForm(forms.ModelForm):
             'project3Title', 'p3FinalImg', 'p3FinalCap', 'p3ProgressImg1', 'p3ProgressCap1', 'p3ProgressImg2', 'p3ProgressCap2', 'p3ProgressImg3', 'p3ProgressCap3', 'p3Explanation',
             'project4Title', 'p4FinalImg', 'p4FinalCap', 'p4ProgressImg1', 'p4ProgressCap1', 'p4ProgressImg2', 'p4ProgressCap2', 'p4ProgressImg3', 'p4ProgressCap3', 'p4Explanation',
         ]
+
 
