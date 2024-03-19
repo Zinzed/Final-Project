@@ -144,4 +144,34 @@
 /*End of Main*/
 
 /*Footer*/
+    footer
+    {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 10px;
+        text-align: center;
+        width: 100%;
+        font-family: 'Gill Sans', sans-serif;
+    }
+
+    .footer--nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #fff;
+        gap: 1rem;
+        list-style-type: none;
+        font-family: 'Gill Sans', sans-serif;
+    }
+
+    .footer--nav ul li a
+    {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer--nav ul li a:hover
+    {
+        text-decoration-line: underline;
+    }
 /*End of Footer*/

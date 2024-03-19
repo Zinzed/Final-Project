@@ -63,6 +63,8 @@ def register(request):
     context = {'registerForm': form}
 
     return render(request, 'register.html', context=context)
+  
+  
 def login(request):
 
     form = loginForm()
@@ -82,9 +84,12 @@ def login(request):
     context = {'loginForm':form}
 
     return render(request, 'login.html', context)
+  
 
 def LandingPage(request):
     return render(request, 'LandingPage.html')
 
 
+def explore (request):
+    return render(request, 'explore.html')
 

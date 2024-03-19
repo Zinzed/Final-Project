@@ -10,4 +10,5 @@ urlpatterns = [
     path('selectTemplate', views.selectTemplate, name='selectTemplate'),
     path('newTemplate', views.newTemplate, name='newTemplate'),
     path('editTemplate/<int:templateId>', views.editTemplate, name='editTemplate'),
+    path('explore', views.explore, name='explore'),
 ]

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>New Template</title>
+    <!--<link rel="stylesheet" href="{% static 'Artfolio/css/newTemplate.css' %}"/>-->
 </head>
 <body>
 
@@ -25,19 +26,97 @@
                 <li><a href="">Profile</a></li>
             </ul>
         </personal>
-
     </header>
 
     <div>
         <h1>You have chosen to edit template one</h1>
-        <a href="">Cancel</a>
+        <br>
         <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
+        <br>
+        <a href="{% url 'selectTemplate' %}" class="cancel-link">Cancel</a>
+        <br><br><br>
     </div>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{templateForm}}
-        <button type="submit">Create</button>
-    </form>
+    <div class = "container">
+       <form class="centered-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!--Project 1 -->
+    <div class="project">
+            {{ templateForm.project1Title }}
+        <div class="final-image">
+            {{ templateForm.p1FinalImg }}
+        </div>
+        {{ templateForm.p1FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg1 }}
+                {{ templateForm.p1ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg2 }}
+                {{ templateForm.p1ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg3 }}
+                {{ templateForm.p1ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+
+    <!--Project 2-->
+    <div class="project">
+            {{ templateForm.project2Title }}
+        <div class="final-image">
+            {{ templateForm.p2FinalImg }}
+        </div>
+        {{ templateForm.p2FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg1 }}
+                {{ templateForm.p2ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg2 }}
+                {{ templateForm.p2ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg3 }}
+                {{ templateForm.p2ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+
+    <!--Project 3-->
+    <div class="project">
+            {{ templateForm.project3Title }}
+        <div class="final-image">
+            {{ templateForm.p3FinalImg }}
+        </div>
+        {{ templateForm.p3FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg1 }}
+                {{ templateForm.p3ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg2 }}
+                {{ templateForm.p3ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg3 }}
+                {{ templateForm.p3ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+           <button type="submit">Create</button>
+        </form>
+    </div>
+
+
+
 </body>
 </html>
