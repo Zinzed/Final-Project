@@ -43,7 +43,7 @@
                             <!--<img class="profile--photo" src="profile-photo.png" alt="Profile photo" />-->
                             <p>Ontario, Canada</p>
                             <p>Open to work</p>
-                            <a class="btn--edit--profile" href="#"><button>Edit Profile</button></a>
+                            <a class="btn--edit--profile" href="#" id="edit-pr"><button>Edit Profile</button></a>
                             <p class="summary">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
                                 possimus id hic ipsum, consequuntur magni facere dicta,
@@ -84,8 +84,8 @@
             </header><br><br>
 
             <!--My work section-->
-            <div id="content1">
-                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><button>Edit portfolio</button></a>
+            <div id="content1" >
+                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><span>Edit portfolio</span></a>
             </div>
 
 
@@ -126,6 +126,8 @@
             <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
         </div>
     </footer>
+
+
 <!--JavaScript-->
 <script>
     function showContent(contentNumber) {
