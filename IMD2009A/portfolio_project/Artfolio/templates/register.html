@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', sans-serif;
+            background: linear-gradient(80deg, #4497bb, #44bba4, #44bb69) ;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 150px;
+            font-family: 'Gill Sans', sans-serif;
+        }
+
+        form {
+            width: 450px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            color: black;
+
+        }
+
+        input[type="submit"] {
+            background-color: #44bba4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5ba597;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"]{
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>Register Now!</h1>
+
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ registerForm.as_p }}
+        <input type="submit" value="Register"/>
+    </form>
+    <center>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </center>
+</div>
+
+</body>
+</html>
