@@ -1,0 +1,118 @@
+/** {
+box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+}*/
+
+/* align body and main to work with header and footer */
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: 4rem;
+    padding-bottom: 9rem;
+}
+
+/*Header*/
+.header
+{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 7px;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
+    top: 0;
+    height: 4rem;
+}
+
+
+.header nav
+{
+    flex-grow: 0.95;
+    padding: 10px;
+}
+
+
+.nav
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+
+
+.nav li:nth-child(1)
+{
+    flex-grow: 0.05;
+}
+
+
+.nav a
+{
+    text-decoration: none;
+    color:black;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+
+.nav a:hover
+{
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    color:black;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+
+.personal
+{
+    list-style-type: none;
+}
+
+.personal img
+{
+    width: 8rem;
+}
+
+
+/*Footer*/
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 10px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Gill Sans', sans-serif;
+    position: absolute;
+    bottom:0;
+    height: 9rem;
+}
+
+.footer--nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #fff;
+    gap: 1rem;
+    list-style-type: none;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.footer--nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer--nav ul li a:hover {
+    text-decoration-line: underline;
+}

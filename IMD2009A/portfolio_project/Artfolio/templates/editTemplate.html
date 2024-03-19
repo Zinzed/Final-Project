@@ -5,47 +5,62 @@
     <head>
         <meta charset="UTF-8">
         <title>Edit Template</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'Artfolio/css/headerFooter.css' %}"/>
     </head>
 
     <body>
 
         <header class="header">
 
-                <nav>
-                    <ul class="nav">
-                        <li>logo</li>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Templates</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Help</a></li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul class="nav">
+                    <li><a href="">Home</a></li>
+                    <li><a href="{% url 'main' %}">Profile</a></li>
+                </ul>
+            </nav>
 
-                <personal>
-                    <ul class="personal">
-                        <li><a href="">Settings</a></li>
-                        <li><a href="">Profile</a></li>
-                    </ul>
-                </personal>
+            <personal>
+                <ul class="personal">
+                    <li><img class="logo" src= "/static/Artfolio/Images/artfolio_logo_black.png" alt="Artfolio logo black text"></li>
+                </ul>
+            </personal>
 
             </header>
 
+        <main>
+            <div>
+               <h1>You are editing your template</h1>
+                <a href="">Back</a>
+                <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
+            </div>
 
-        <div>
-           <h1>You are editing your template</h1>
-            <a href="">Back</a>
-            <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
-        </div>
 
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ templateForm }}
 
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ templateForm }}
+                <input type="submit" name="saveChanges" value="Save Changes">
+            </form>
+        </main>
 
-            <input type="submit" name="saveChanges" value="Save Changes">
-        </form>
-
+        <footer>
+            <div class="footer">
+                <!--1st div-->
+                <div class="container--footer">
+                    <!--<h2 class="sr-only">Site footer</h2>-->
+                    <!--2nd div-->
+                    <nav class="footer--nav">
+                        <!--<h3 class="sr-only">Footer navigation</h3>-->
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="{% url 'main' %}">Profile</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
+            </div><br><br>
+        </footer>
 
     </body>
 

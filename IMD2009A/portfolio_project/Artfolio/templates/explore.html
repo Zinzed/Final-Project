@@ -12,19 +12,14 @@
 
                 <nav>
                     <ul class="nav">
-                        <li>logo</li>
                         <li><a href="">Home</a></li>
-                        <li><a href="">Templates</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Help</a></li>
+                        <li><a href="{% url 'main' %}">Profile</a></li>
                     </ul>
                 </nav>
 
                 <personal>
                     <ul class="personal">
-                        <li><a href="">Settings</a></li>
-                        <li><a href="">Profile</a></li>
+                        <li><img class="logo" src= "/static/Artfolio/Images/artfolio_logo_black.png" alt="Artfolio logo black text"></li>
                     </ul>
                 </personal>
             </header>
@@ -53,23 +48,21 @@
         <!--Footer section-->
         <footer>
             <div class="footer">
-                <!--1st div-->
-                <div class="container--footer">
-                    <!--<h2 class="sr-only">Site footer</h2>-->
-                    <!--2nd div-->
-                    <nav class="footer--nav">
-                        <!--<h3 class="sr-only">Footer navigation</h3>-->
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Edit Template</a></li>
-                            <li><a href="">Portfolio</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Help</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
-            </div><br><br>
+        <div class="footer">
+            <!--1st div-->
+            <div class="container--footer">
+                <!--<h2 class="sr-only">Site footer</h2>-->
+                <!--2nd div-->
+                <nav class="footer--nav">
+                    <!--<h3 class="sr-only">Footer navigation</h3>-->
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="{% url 'main' %}">Profile</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
+        </div><br><br>
         </footer>
     </body>
 </html>
