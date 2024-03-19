@@ -83,7 +83,8 @@ def login(request):
 
     return render(request, 'login.html', context)
 
-
+def LandingPage(request):
+    return render(request, 'LandingPage.html')
 
 
 
