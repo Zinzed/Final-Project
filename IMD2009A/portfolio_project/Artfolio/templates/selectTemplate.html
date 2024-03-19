@@ -12,21 +12,22 @@
 
     <body class="body">
         <header class="header">
+            <div class="header-container">
+                <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
+                <link rel="stylesheet" href="header.css"/>
 
-            <nav>
-                <ul class="nav">
-                    <li><a href="">Home</a></li>
-                    <li><a href="{% url 'main' %}">Profile</a></li>
-                </ul>
-            </nav>
+                <div class="explore-link">
+                    <a href="">Home</a>
+                    <a href="{% url 'main' %}">Profile</a>
+                </div>
 
-            <personal>
-                <ul class="personal">
-                    <li><img class="logo" src= "/static/Artfolio/Images/artfolio_logo_black.png" alt="Artfolio logo black text"></li>
-                </ul>
-            </personal>
-
-        </header>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+    </header>
 
         <main class="main">
             <h1>Start your portfolio by choosing from the following templates!</h1>
