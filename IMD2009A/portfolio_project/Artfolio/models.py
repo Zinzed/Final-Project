@@ -10,8 +10,19 @@ from PIL import Image
 #     finalImgCap = models.CharField(max_length=100)
 #     explanation = models.CharField(max_length=1000)
 
+# class filters(models.Model):
+#     graphicDesign
+#     gameDesign
+#     fashion
+#     traditionalArt
+#     interiorDesign
+#     industrialDesign
+#     architecture
+
 
 class template(models.Model):
+    # filterTag = models.
+
     project1Title = models.CharField(max_length=100, default="Project 1 Title")
     p1FinalImg = models.ImageField(upload_to='projectImages/', null=True, blank=True)
     p1FinalCap = models.CharField(max_length=50, default="final product caption")
