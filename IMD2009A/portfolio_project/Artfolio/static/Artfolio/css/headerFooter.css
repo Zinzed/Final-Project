@@ -110,7 +110,7 @@ main {
         transform: translate(0) !important;
     }
 
-    @media (max-width: 1040px)
+    @media (max-width: 1020px)
     {
         .explore-link
         {
