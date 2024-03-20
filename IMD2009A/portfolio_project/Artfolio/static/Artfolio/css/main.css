@@ -1,3 +1,4 @@
+
     * {
     box-sizing: border-box;
 }
@@ -170,6 +171,7 @@ button:hover {
     border-style: solid;
 }
 
+
 .btn--create--portfolio {
     display: flex;
     justify-content: center;
@@ -329,6 +331,7 @@ footer {
         width: 100px;
     }
 
+
     p {
         font-size: 16px;
     }
@@ -348,3 +351,4 @@ footer {
         max-width: 400px;
     }
 }
+
