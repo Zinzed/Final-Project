@@ -1,12 +1,12 @@
-* {
+    * {
     box-sizing: border-box;
 }
 
-/*body {*/
-/*    font-family: 'Gill Sans', sans-serif;*/
-/*    list-style-type: none;*/
-/*    text-decoration: none;*/
-/*}*/
+body {
+    font-family: 'Gill Sans', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+}
 
 /*!* Navigation Bar *!*/
 /*.header {*/
@@ -123,6 +123,7 @@ button:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .btn--copy--link {
@@ -153,6 +154,7 @@ button:hover {
     justify-content: center;
 }
 
+
 .btn--edit--portfolio {
     display: flex;
     justify-content: center;
@@ -176,19 +178,31 @@ span:hover {
     cursor: pointer;
 }
 
-btn--edit--profile {
-    display: flex;
-    justify-content: center;
+button {
+    background-color: #44bba4;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition-duration: 0.4s;
     text-decoration: none;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 input[type=text] {
     background-color: #F7F7F7;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
-    margin: 5px 20px;
+    width: 50%;
 }
 
 #message {
@@ -199,6 +213,7 @@ input[type=text] {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
     margin: 5px 20px;
     font-family: 'Gill Sans', sans-serif;
+    width: 50%;
 }
 
 #upload {
