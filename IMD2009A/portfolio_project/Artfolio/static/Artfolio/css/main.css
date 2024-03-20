@@ -53,6 +53,7 @@ body {
 /*    gap: 30px;*/
 /*}*/
 /* End of Navigation Bar */
+
 p {
     font-size: 14px;
 }
@@ -136,48 +137,13 @@ button:hover {
     text-decoration: none;
 }
 
-/* New CSS for right item hover state */
+
 .right-items .btn--copy--link:hover {
-    background-color: #000; /* Change the background color as desired */
+    background-color: #000;
     color:#ffffff;
 
 }
 
-.sub--header--bar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px 10px 0 0;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.sub--header--bar--nav {
-    list-style-type: none;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.sub--header--bar--nav ul {
-    list-style-type: none;
-    display: flex;
-    padding-left: 0;
-}
-
-.sub--header--bar--nav ul li a {
-    text-decoration: none;
-    color: #000;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.sub--header--bar--nav ul li a:hover {
-    color: #5ba597;
-    text-decoration: none;
-}
 
 .sub--section {
     border-radius: 10px;
@@ -348,15 +314,15 @@ footer {
     }
 
     .profile {
-    padding-left: 100px;
-    padding-right: 100px;
-}
+        padding-left: 100px;
+        padding-right: 100px;
+    }
 
     .profile--flex--content {
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-}
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
 
     .profile--placeholder {
         height: 100px;
@@ -364,20 +330,20 @@ footer {
     }
 
     p {
-    font-size: 16px;
-}
+        font-size: 16px;
+    }
 
     button {
-    font-size: 16px;
-}
+        font-size: 16px;
+    }
     .navbar--container {
-    max-width: 1000px;
+        max-width: 1000px;
 
-}
+    }
 
     .navbar {
-    padding: 0 10px;
-}
+        padding: 0 10px;
+    }
     .summary {
         max-width: 400px;
     }
