@@ -53,18 +53,26 @@ body {
 /*    gap: 30px;*/
 /*}*/
 /* End of Navigation Bar */
-
+p {
+    font-size: 12px;
+}
 .profile--placeholder {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     background-color: #F7F7F7;
     border-radius: 50%;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
 }
 
-.profile {
-    padding-left: 100px;
-    padding-right: 100px;
+
+
+.profile--flex--content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
 }
 
 .summary {
@@ -109,7 +117,7 @@ button:hover {
 .sub--header--bar--nav ul li a {
     text-decoration: none;
     color: #000;
-    padding: 1rem;
+    padding: 0.5rem;
     transition: color 0.3s ease;
 }
 
@@ -188,6 +196,7 @@ button {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition-duration: 0.4s;
     text-decoration: none;
+    font-size: 12px;
 }
 
 form {
@@ -273,7 +282,7 @@ footer {
     text-decoration-line: underline;
 }
 
-/* Media Query */
+/* Media Query for Desktop */
 @media only screen and (min-width: 992px) {
     .header nav {
         flex-grow: 0.95;
@@ -284,4 +293,32 @@ footer {
         list-style-type: none;
         gap: 30px;
     }
+
+    .profile {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+    .profile--flex--content {
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+    .profile--placeholder {
+        height: 100px;
+        width: 100px;
+    }
+
+    p {
+    font-size: 16px;
+}
+    .sub--header--bar--nav {
+    /*justify-content: flex-start;*/
+    /*padding-left: 40px;*/
+}
+
+    button {
+    font-size: 16px;
+}
 }
