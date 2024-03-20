@@ -15,36 +15,113 @@
 
         <header class="header">
 
-            <nav>
-                <ul class="nav">
-                    <li><a href="{% url 'explore' %}">Explore</a></li>
-                    <li><a href="{% url 'main' %}">Profile</a></li>
-                </ul>
-            </nav>
+            <div class="header-container">
+                <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
+                <link rel="stylesheet" href="header.css"/>
 
-            <personal>
-                <ul class="personal">
-                    <li><img class="logo" src= "/static/Artfolio/Images/artfolio_logo_black.png" alt="Artfolio logo black text"></li>
-                </ul>
-            </personal>
+                <div class="explore-link">
+                    <a href="{% url 'explore' %}">Explore</a>
+                    <a href="{% url 'main' %}">Profile</a>
+                </div>
+
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
 
             </header>
 
-        <main>
-            <div>
-               <h1>You are editing your template</h1>
-                <a href="">Back</a>
-                <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
+<main>
+    <div>
+        <h1>You are editing your template!</h1>
+        <br>
+        <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
+        <br>
+        <a href="{% url 'main' %}" class="cancel-link">Cancel</a>
+        <br><br><br>
+    </div>
+
+    <div class = "container">
+       <form class="centered-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!--Project 1 -->
+    <div class="project">
+            {{ templateForm.project1Title }}
+        <div class="final-image">
+            {{ templateForm.p1FinalImg }}
+        </div>
+        {{ templateForm.p1FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg1 }}
+                {{ templateForm.p1ProgressCap1 }}
             </div>
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg2 }}
+                {{ templateForm.p1ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p1ProgressImg3 }}
+                {{ templateForm.p1ProgressCap3 }}
+            </div>
+        </div>
+    </div>
 
+    <!--Project 2-->
+    <div class="project">
+            {{ templateForm.project2Title }}
+        <div class="final-image">
+            {{ templateForm.p2FinalImg }}
+        </div>
+        {{ templateForm.p2FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg1 }}
+                {{ templateForm.p2ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg2 }}
+                {{ templateForm.p2ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p2ProgressImg3 }}
+                {{ templateForm.p2ProgressCap3 }}
+            </div>
+        </div>
+    </div>
 
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ templateForm }}
-
-                <input type="submit" name="saveChanges" value="Save Changes">
-            </form>
-        </main>
+    <!--Project 3-->
+    <div class="project">
+            {{ templateForm.project3Title }}
+        <div class="final-image">
+            {{ templateForm.p3FinalImg }}
+        </div>
+        {{ templateForm.p3FinalCap }}
+        <h3> Progress: </h3>
+        <div class = "progress-images">
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg1 }}
+                {{ templateForm.p3ProgressCap1 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg2 }}
+                {{ templateForm.p3ProgressCap2 }}
+            </div>
+            <div class="progress-image">
+                {{ templateForm.p3ProgressImg3 }}
+                {{ templateForm.p3ProgressCap3 }}
+            </div>
+        </div>
+    </div>
+           <button type="submit">Save</button>
+        </form>
+    </div>
+    </main>
 
         <footer>
             <div class="footer">
