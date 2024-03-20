@@ -377,6 +377,8 @@ footer {
 
     .navbar {
     padding: 0 10px;
-
 }
+    .summary {
+        max-width: 400px;
+    }
 }
