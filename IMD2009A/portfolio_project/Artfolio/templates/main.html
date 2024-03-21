@@ -5,30 +5,30 @@
     <title>My Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% load static %}
+    <link rel="shortcut icon" type="image/png" href="static/Artfolio/Images/artfolio-favicon.png"/>
     <link rel="stylesheet" href="{% static 'Artfolio/css/headerFooter.css' %}"/>
     <link rel="stylesheet" href="{% static 'Artfolio/css/main.css' %}"/>
-    </head>
+    <script src="{% static 'Scripts/header.js' %}"></script>
+</head>
 
-<body>
-    <!--Header section-->
-    <section>
+<body class="body">
         <header class="header">
+            <div class="header-container">
+                <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
+                <link rel="stylesheet" href="header.css"/>
 
-            <nav>
-                <ul class="nav">
-                    <li><a href="">Home</a></li>
-                    <li><a href="{% url 'main' %}">Profile</a></li>
-                </ul>
-            </nav>
+                <div class="explore-link">
+                    <a href="{% url 'explore' %}">Explore</a>
+                    <a href="{% url 'main' %}">Profile</a>
+                </div>
 
-            <personal>
-                <ul class="personal">
-                    <li><img class="logo" src= "/static/Artfolio/Images/artfolio_logo_black.png" alt="Artfolio logo black text"></li>
-                </ul>
-            </personal>
-
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
         </header>
-    </section>
 
     <main>
        <div class = "wrapper">
@@ -43,7 +43,7 @@
                             <!--<img class="profile--photo" src="profile-photo.png" alt="Profile photo" />-->
                             <p>Ontario, Canada</p>
                             <p>Open to work</p>
-                            <a class="btn--edit--profile" href="#"><button>Edit Profile</button></a>
+                            <a class="btn--edit--profile" href="#" id="edit-pr"><button>Edit Profile</button></a>
                             <p class="summary">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
                                 possimus id hic ipsum, consequuntur magni facere dicta,
@@ -61,31 +61,24 @@
             <div class ="sub--section">
                 <header>
                 <div class="sub--header">
-                    <div class="container--sub--header">
-                        <!--<h2 class="sr-only">Sub navigation header</h2>-->
-
-                        <div class="sub--header--bar">
-                            <nav class="sub--header--bar--nav">
-                                <!--<h3 class="sr-only">Sub navigation</h3>-->
-                                <ul>
-                                    <li><a href="#" onclick="showContent(1); return false;">My Work</a></li>
-                                    <li><a href="#" onclick="showContent(3); return false;">Contact me</a></li>
-                                </ul>
-                            </nav>
-
-
-                            <nav class="sub--header--bar--nav">
-                                <!--<h3 class="sr-only">Sub navigation</h3>-->
-                                <a class="btn--copy--link" href="#">Copy Link</a>
-                            </nav>
-                        </div>
+                    <div class="navbar--container">
+                        <nav class="navbar">
+                        <ul class="left-items">
+                            <li><a href="#" onclick="showContent(1); return false;">My Work</a></li>
+                            <li><a href="#" onclick="showContent(3); return false;">Contact me</a></li>
+                        </ul>
+                        <ul class="right-items">
+                            <li><a class="btn--copy--link" href="#">Copy Link</a></li>
+                        </ul>
+                    </nav>
                     </div>
                 </div>
             </header><br><br>
 
             <!--My work section-->
-            <div id="content1">
-                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><button>Edit portfolio</button></a>
+
+            <div id="content1" >
+                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><span>Edit portfolio</span></a>
             </div>
 
 
@@ -118,7 +111,7 @@
                 <nav class="footer--nav">
                     <!--<h3 class="sr-only">Footer navigation</h3>-->
                     <ul>
-                        <li><a href="">Home</a></li>
+                        <li><a href="{% url 'explore' %}">Explore</a></li>
                         <li><a href="{% url 'main' %}">Profile</a></li>
                     </ul>
                 </nav>
@@ -126,6 +119,8 @@
             <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
         </div>
     </footer>
+
+
 <!--JavaScript-->
 <script>
     function showContent(contentNumber) {
