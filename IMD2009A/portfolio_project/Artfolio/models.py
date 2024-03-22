@@ -10,7 +10,9 @@ from PIL import Image
 #     finalImgCap = models.CharField(max_length=100)
 #     explanation = models.CharField(max_length=1000)
 
-# class filters(models.Model):
+class filter(models.Model):
+    filterTag = models.CharField(max_length=100)
+
 #     graphicDesign
 #     gameDesign
 #     fashion
@@ -21,7 +23,7 @@ from PIL import Image
 
 
 class template(models.Model):
-    # filterTag = models.
+    filterTag = models.ManyToManyField(filter)
 
     project1Title = models.CharField(max_length=100, default="Project 1 Title")
     p1FinalImg = models.ImageField(upload_to='projectImages/', null=True, blank=True)
