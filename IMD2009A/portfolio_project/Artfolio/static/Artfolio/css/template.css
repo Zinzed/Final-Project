@@ -22,6 +22,8 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: center;
+    padding: 0px 50px 0px 50px;
+    text-align: center;
 }
 
 .instructions
@@ -30,6 +32,8 @@
     justify-content: center;
     font-family: 'Gill Sans', serif;
     font-size: 20px;
+    padding: 0px 50px 0px 50px;
+    text-align: center;
 }
 
 .templates
@@ -37,7 +41,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 100px 10px 100px;
     list-style-type: none;
     gap: 50px;
 }
@@ -49,6 +53,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    /*text-align: center; /**/
 }
 
 
@@ -70,7 +75,8 @@
     display: flex;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 400px;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -114,5 +120,32 @@
     .footer--nav ul li a:hover
     {
         text-decoration-line: underline;
+    }
+
+    @media only screen and (max-width: 800px)
+    {
+        .templates
+        {
+            flex-direction: column;
+        }
+
+        .tempImg
+        {
+            width: 100%;
+        }
+    }
+
+@media only screen and (max-width: 1000px)
+    {
+        .templates
+        {
+            gap: 20px;
+            padding: 10px 50px 10px 50px;
+        }
+
+        .tempImg
+        {
+            width: 100%;
+        }
     }
 /*End of Footer*/
