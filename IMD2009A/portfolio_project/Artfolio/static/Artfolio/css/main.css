@@ -299,7 +299,7 @@ footer {
 }
 
 /* Media Query for Desktop */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1020px) {
     .header nav {
         flex-grow: 0.95;
     }
