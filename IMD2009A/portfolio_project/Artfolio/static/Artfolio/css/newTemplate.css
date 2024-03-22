@@ -39,6 +39,10 @@ p {
     align-items: center;
 }
 
+.filter-section {
+    padding-bottom: 2rem;
+}
+
 /* Final image alignment */
 .final-image {
     display: flex;

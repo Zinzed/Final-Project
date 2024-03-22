@@ -43,10 +43,15 @@
         <br><br><br>
     </div>
 
-    <div class = "container">
+
        <form class="centered-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+           <div class="filter-section">
+             {{ templateForm.filterTag }}
+           </div>
 
+
+<div class = "container">
             <!--Project 1 -->
     <div class="project">
             {{ templateForm.project1Title }}
