@@ -11,7 +11,11 @@ from PIL import Image
 #     explanation = models.CharField(max_length=1000)
 
 class filterTag(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
 
 #     graphicDesign
 #     gameDesign
@@ -23,7 +27,7 @@ class filterTag(models.Model):
 
 
 class template(models.Model):
-    filterTag = models.ManyToManyField(filterTag)
+    filterTags = models.ManyToManyField(to=filterTag, related_name="templates", blank=True)
 
     project1Title = models.CharField(max_length=100, default="Project 1 Title")
     p1FinalImg = models.ImageField(upload_to='projectImages')
