@@ -128,7 +128,10 @@ STATIC_ROOT = ''
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Images uploaded by User
-#Absolute path to the uploaded media files
-MEDIA_ROOT = BASE_DIR / 'media'
+print('BASE_DIR = ', BASE_DIR, '\n')
+
 #URL to present the files
 MEDIA_URL = '/media/'
+
+#Absolute path to the uploaded media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

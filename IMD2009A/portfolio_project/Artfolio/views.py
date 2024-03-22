@@ -3,8 +3,9 @@ import logging
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import template
-from .forms import templateForm
-
+from .forms import templateForm, userForm, loginForm
+from django.contrib.auth.models import auth
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
@@ -32,9 +33,10 @@ def newTemplate(request):
         form = templateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('main')
-    return render(request, 'newTemplate.html', {'templateForm': form})
-
+            return render(request, 'newTemplate.html', {'form': form, 'imgObj': form.instance})
+        else:
+            form = templateForm()
+    return render(request, 'newTemplate.html', {'form': form})
 
 def editTemplate(request, templateId):
     myTemplate = template.objects.get(pk=templateId)
@@ -50,5 +52,45 @@ def editTemplate(request, templateId):
     return render(request, 'editTemplate.html', {'templateForm': form})
 
 
+def register(request):
+
+    form = userForm()
+    if request.method == "POST":
+        form = userForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")
+
+    context = {'registerForm': form}
+
+    return render(request, 'register.html', context=context)
+  
+  
+def login(request):
+
+    form = loginForm()
+    if request.method == "POST":
+        form = loginForm(request, data=request.POST)
+        if form.is_valid():
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+
+                auth.login(request, user)
+                return redirect("main")
+
+    context = {'loginForm':form}
+
+    return render(request, 'login.html', context)
+  
+
+def LandingPage(request):
+    return render(request, 'LandingPage.html')
+
+
 def explore (request):
     return render(request, 'explore.html')
+

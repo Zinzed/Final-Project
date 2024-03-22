@@ -3,42 +3,43 @@
     <head>
         <meta charset="UTF-8">
         <title>Explore</title>
+        {% load static %}
+        <link rel="shortcut icon" type="image/png" href="static/Artfolio/Images/artfolio-favicon.png"/>
+        <link rel="stylesheet" href="{% static 'Artfolio/css/explore.css' %}"/>
+        <link rel="stylesheet" href="{% static 'Artfolio/css/headerFooter.css' %}"/>
+        <script src="{% static 'Scripts/header.js' %}"></script>
     </head>
 
-    <body>
-        <!--Header-->
+    <body class="body">
         <header class="header">
+            <div class="header-container">
+                <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
+                <link rel="stylesheet" href="header.css"/>
 
-                <nav>
-                    <ul class="nav">
-                        <li>logo</li>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Templates</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Help</a></li>
-                    </ul>
-                </nav>
+                <div class="explore-link">
+                    <a href="{% url 'explore' %}">Explore</a>
+                    <a href="{% url 'main' %}">Profile</a>
+                </div>
 
-                <personal>
-                    <ul class="personal">
-                        <li><a href="">Settings</a></li>
-                        <li><a href="">Profile</a></li>
-                    </ul>
-                </personal>
-            </header>
-            <!--Header-->
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </header>
 
             <!--Explore page navigation -->
             <div class="info">
-                <h1>Explore</h1>
-                <p>Take a look at other people's work!</p>
+                <h1 class="title">Explore</h1>
+                <p class="dir">Take a look at other people's work!</p>
                 <div class="filters">
                     <button type="submit">All</button>
                     <button type="submit">Cartoon</button>
                     <button type="submit">Realism</button>
                     <button type="submit">Colourful</button>
                 </div>
+                <hr>
             </div>
             <!--End of Explore page navigation -->
 
@@ -51,23 +52,21 @@
         <!--Footer section-->
         <footer>
             <div class="footer">
-                <!--1st div-->
-                <div class="container--footer">
-                    <!--<h2 class="sr-only">Site footer</h2>-->
-                    <!--2nd div-->
-                    <nav class="footer--nav">
-                        <!--<h3 class="sr-only">Footer navigation</h3>-->
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Edit Template</a></li>
-                            <li><a href="">Portfolio</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Help</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
-            </div><br><br>
+        <div class="footer">
+            <!--1st div-->
+            <div class="container--footer">
+                <!--<h2 class="sr-only">Site footer</h2>-->
+                <!--2nd div-->
+                <nav class="footer--nav">
+                    <!--<h3 class="sr-only">Footer navigation</h3>-->
+                    <ul>
+                        <li><a href="{% url 'explore' %}">Explore</a></li>
+                        <li><a href="{% url 'main' %}">Profile</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
+        </div><br><br>
         </footer>
     </body>
 </html>

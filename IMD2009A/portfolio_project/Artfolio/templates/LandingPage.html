@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="static/Artfolio/Images/artfolio-favicon.png"/>
+    <!--<link rel="stylesheet" href="{% static 'Artfolio/css/headerFooter.css' %}"/>
+    <script src="{% static 'Scripts/header.js' %}"></script>-->
+
+    <style>
+        body {
+            font-family: 'Gill Sans', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .showing {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: left;
+        }
+
+        .header {
+            background-color: #ffffff;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 7px;
+            color: #000000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 170px;
+            height: auto;
+            margin: 20px 0;
+            padding-left: 150px;
+        }
+
+        h1 {
+            font-size: 100px;
+            margin-bottom: -20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #427699;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #44bba4;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: #5ba597;
+        }
+
+        .explore-link {
+            font-size: 24px;
+            margin-bottom: 5px;
+
+        }
+
+        .explore-link a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding-right: 150px;
+        }
+
+        .explore-link a:hover {
+            color: #5ba597;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <header class="header">
+        <div class="header-container">
+            <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
+            <div class="explore-link">
+                <a href="explore">Explore</a>
+                <a href="register">Register</a>
+                <a href="login">Login</a>
+            </div>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+
+        <img src="static/Artfolio/Images/mosaicTexture.png" alt="Background Image" class="showing background-image">
+        <img src="static/Artfolio/Images/mosaicTexture2.png" alt="Background Image" class="background-image">
+        <img src="static/Artfolio/Images/mosaicTexture3.png" alt="Background Image" class="background-image">
+
+
+    <div class="container">
+    <h1>Artfolio</h1>
+        <h2>The place for artists and creatives.</h2>
+        <p>Create a portfolio and explore other people's portfolios for inspiration.<br>Launch your artistic career journey with Artfolio now!</p>
+    <a href="register" class="btn">Get Started</a>
+    <a href="login" class="btn">Log In</a>
+</div>
+
+<script>
+    let backgrounds = document.querySelectorAll(".background-image");
+    let imageIndex = 0;
+
+    function changeBackground() {
+        backgrounds[imageIndex].classList.remove("showing");
+        imageIndex++;
+        if (imageIndex >= backgrounds.length) {
+            imageIndex = 0;
+        }
+        backgrounds[imageIndex].classList.add("showing");
+    }
+
+setInterval(changeBackground, 2000);
+
+
+</script>
+</body>
+</html>
+
+

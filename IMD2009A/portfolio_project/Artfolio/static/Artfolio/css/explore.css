@@ -1,57 +1,105 @@
-.header
-{
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    padding: 7px;
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+/*Explore Page Navigation*/
+    .info
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
 
+    .title
+    {
+        display: flex;
+        justify-content: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 35px;
+    }
 
-.header nav
-{
-    flex-grow: 0.95;
-}
+    .dir
+    {
+        display: flex;
+        justify-content: center;
+        font-family: 'Gill Sans', serif;
+        font-size: 18px;
+    }
 
+    .filters
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px black;
+    }
 
-.nav
-{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    gap: 30px;
-}
+    button
+    {
+        background-color: #fff;
+        color: black;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 30px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        font-family: 'Gill Sans', serif;
+        font-size: 15px;
+        transition: 0.5s;
+    }
 
+    button:hover
+    {
+        background-color:#9a9a9a;
+        transform: scale(1.1);
+    }
 
-.nav li:nth-child(1)
-{
-    flex-grow: 0.05;
-}
+    button:active,
+    button:focus
+    {
+        background-color: black;
+        color: white;
+    }
 
+    hr
+    {
+        border-bottom: 2px solid black;
+        display: flex;
+        width: 100%;
+    }
+/*End of Explore Page Navigation*/
 
-.nav a
-{
-    text-decoration: none;
-    color:black;
-    font-family: 'Gill Sans', serif;
-}
+/*Footer*/
+    footer
+    {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 10px;
+        text-align: center;
+        width: 100%;
+        font-family: 'Gill Sans', sans-serif;
+    }
 
+    .footer--nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #fff;
+        gap: 1rem;
+        list-style-type: none;
+        font-family: 'Gill Sans', sans-serif;
+    }
 
-.nav a:hover
-{
-    text-decoration-line: underline;
-    text-decoration-color: black;
-    color:black;
-    font-family: 'Gill Sans', serif;
-}
+    .footer--nav ul li a
+    {
+        color: #fff;
+        text-decoration: none;
+    }
 
-
-.personal
-{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    gap: 30px;
-}
-/*End of Navigation Bar*/
+    .footer--nav ul li a:hover
+    {
+        text-decoration-line: underline;
+    }
+/*End of footer*/
