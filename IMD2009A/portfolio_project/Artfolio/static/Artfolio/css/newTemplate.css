@@ -161,7 +161,7 @@ button {
 button:hover {
     background-color: #5ba597;
     cursor: pointer;
-}
+
 
 /* Media Query for Tablet */
 @media screen and (min-device-width: 768px) {
@@ -174,4 +174,5 @@ button:hover {
 .template--form {
     height: 400px;
 }
+
 }
