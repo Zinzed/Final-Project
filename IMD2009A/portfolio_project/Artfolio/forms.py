@@ -27,7 +27,7 @@ class templateForm(forms.ModelForm):
         model = template
 
         fields = (
-            'filter',
+            'filterTag',
 
             'project1Title', 'p1FinalImg', 'p1FinalCap', 'p1ProgressImg1', 'p1ProgressCap1', 'p1ProgressImg2',
             'p1ProgressCap2', 'p1ProgressImg3', 'p1ProgressCap3', 'p1Explanation',
