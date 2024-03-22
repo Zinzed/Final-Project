@@ -33,9 +33,10 @@ def newTemplate(request):
         form = templateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('main')
-    return render(request, 'newTemplate.html', {'templateForm': form})
-
+            return render(request, 'newTemplate.html', {'form': form, 'imgObj': form.instance})
+        else:
+            form = templateForm()
+    return render(request, 'newTemplate.html', {'form': form})
 
 def editTemplate(request, templateId):
     myTemplate = template.objects.get(pk=templateId)
