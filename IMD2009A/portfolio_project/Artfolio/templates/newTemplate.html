@@ -29,17 +29,24 @@
         </header>
     <main>
         <div>
-            <h1>You have chosen to edit template one</h1>
-            <br>
-            <p>Click on any of the boxes to upload an image. Click on the text to edit it</p>
-            <br>
-            <a href="{% url 'selectTemplate' %}" class="cancel-link">Cancel</a>
-            <br><br><br>
-        </div>
+                <br><br><br>
+                <h1>You are editing your template!</h1>
+                <br>
+                <a href="{% url 'main' %}" class="cancel-link">Cancel</a>
+                <br><br><br>
+            </div>
 
-        <div class = "container">
+
            <form class="centered-form" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
+               {% csrf_token %}
+
+               <h3 class="filter-text">Select tags that relate to your portfolio! This will help other's find your work.</h3>
+               <div class="filter-section">
+                 {{ templateForm.filterTags }}
+               </div>
+
+               <br>
+               <h3>Click on any of the boxes to upload an image. Click on the text to edit it</h3>
 
                 <!--Project 1 -->
         <div class="project">
@@ -136,7 +143,7 @@
                 </div>
                 <div class="progress-image">
                     {{ templateForm.p4ProgressImg3 }}
-                    {{ templateForm.4ProgressCap3 }}
+                    {{ templateForm.p4ProgressCap3 }}
                 </div>
             </div>
         </div>
