@@ -71,3 +71,21 @@
         width: 100%;
     }
 /*End of Explore Page Navigation*/
+
+/*Responsiveness*/
+    @media (max-width: 515px)
+    {
+        button
+        {
+            background-color: #fff;
+            color: black;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            font-family: 'Gill Sans', serif;
+            font-size: 15px;
+            transition: 0.5s;
+        }
+    }
