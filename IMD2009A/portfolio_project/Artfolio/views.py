@@ -33,7 +33,7 @@ def newTemplate(request):
         form = templateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render(request, 'newTemplate.html', {'templateForm': form, 'imgObj': form.instance})
+            return render(request, 'main.html', {'templateForm': form, 'imgObj': form.instance})
         else:
             form = templateForm()
     return render(request, 'newTemplate.html', {'templateForm': form})

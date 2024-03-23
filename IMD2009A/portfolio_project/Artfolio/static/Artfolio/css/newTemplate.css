@@ -15,10 +15,9 @@ body {
 
 /* Heading styles */
 h1 {
-    font-size: 24px;
+    font-size: 32px;
 }
 h3 {
-    margin-left: 100px;
 }
 
 /* Paragraph styles */
@@ -32,6 +31,10 @@ p {
     flex-direction: column;
     align-items: flex-start;
 }
+
+.template--info p {
+    text-align: right;
+}
 /* Template form */
 .template--form {
     border-radius: 10px;
@@ -43,6 +46,11 @@ p {
     flex-direction: column;
     align-items: center;
     margin:auto;
+}
+
+.filter-section {
+    padding-bottom: 2rem;
+    columns: 15rem 3;
 }
 
 /* Final image alignment */
