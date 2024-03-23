@@ -15,7 +15,7 @@ body {
 
 /* Heading styles */
 h1 {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 /* Paragraph styles */
@@ -41,6 +41,7 @@ p {
 
 .filter-section {
     padding-bottom: 2rem;
+    columns: 15rem 3;
 }
 
 /* Final image alignment */
