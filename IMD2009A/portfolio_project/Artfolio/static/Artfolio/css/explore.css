@@ -22,7 +22,7 @@
     {
         display: flex;
         justify-content: center;
-        font-family: 'Gill Sans', serif;
+        font-family: 'Gill Sans', sans-serif;
         font-size: 25px;
     }
 
@@ -59,8 +59,7 @@
 
     button:active,
     button:focus
-    {
-        background-color: black;
+    {        background-color: black;
         color: white;
     }
 
