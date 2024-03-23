@@ -44,14 +44,17 @@
         <br><br><br>
     </div>
 
+    <div class="container">
     <form class="template--form" method="post" enctype="multipart/form-data">
            {% csrf_token %}
+            {{ form.as_p }}
 
             <!--Project 1 -->
             <div class="project">
                     {{ templateForm.project1Title }}
                 <div class="final-image">
                     {{ templateForm.p1FinalImg }}
+
                 </div>
                 {{ templateForm.p1FinalCap }}
                 {{ templateForm.p1Explanation }}
@@ -146,8 +149,9 @@
                     </div>
                 </div>
             </div>
-                   <button type="submit">Create</button>
+                  <center> <button type="submit">Create</button> </center>
         </form>
+        </div>
     </main>
 
         <br><br><br>
