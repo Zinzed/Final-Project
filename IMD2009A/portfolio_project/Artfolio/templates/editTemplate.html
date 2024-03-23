@@ -34,7 +34,7 @@
         </header>
 
         <main>
-            <div>
+            <div class="template--info">
                 <br><br><br>
                 <h1>You are editing your template!</h1>
                 <br>
@@ -43,7 +43,7 @@
             </div>
 
 
-           <form class="centered-form" method="post" enctype="multipart/form-data">
+           <form class="template--form" method="post" enctype="multipart/form-data">
                {% csrf_token %}
 
                <h3 class="filter-text">Select tags that relate to your portfolio! This will help other's find your work.</h3>
@@ -163,6 +163,7 @@
             </form>
         </main>
 
+        <br><br><br>
         <footer>
             <div class="footer">
                 <!--1st div-->

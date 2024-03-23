@@ -1,19 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>New Template</title>
-    {% load static %}
-    <link rel="shortcut icon" type="image/png" href="static/Artfolio/Images/artfolio-favicon.png"/>
-    <link rel="stylesheet" href="{% static 'Artfolio/css/headerFooter.css' %}"/>
-    <link rel="stylesheet" href="{% static 'Artfolio/css/newTemplate.css' %}"/>
-    <script src="{% static 'Scripts/header.js' %}"></script>
-</head>
-<body class="body">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>New Template</title>
+        {% load static %}
+        <link rel="shortcut icon" type="image/png" href="static/Artfolio/Images/artfolio-favicon.png"/>
+        <link rel="stylesheet" href="{% static 'Artfolio/css/headerFooter.css' %}"/>
+        <link rel="stylesheet" href="{% static 'Artfolio/css/newTemplate.css' %}"/>
+        <script src="{% static 'Scripts/header.js' %}"></script>
+    </head>
+
+    <body>
+
         <header class="header">
+
             <div class="header-container">
                 <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
-                <link rel="stylesheet" href="header.css"/>
 
                 <div class="explore-link">
                     <a href="{% url 'explore' %}">Explore</a>
@@ -27,18 +31,20 @@
                 </div>
             </div>
         </header>
+
     <main>
-        <div>
+        <div class="template--info">
                 <br><br><br>
                 <h1>You are editing your template!</h1>
                 <br>
-                <a href="{% url 'main' %}" class="cancel-link">Cancel</a>
+                <a href="{% url 'selectTemplate' %}" class="cancel-link">Cancel</a>
                 <br><br><br>
             </div>
 
-
-           <form class="centered-form" method="post" enctype="multipart/form-data">
-               {% csrf_token %}
+    <div class="container">
+    <form class="template--form" method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+            {{ form.as_p }}
 
                <h3 class="filter-text">Select tags that relate to your portfolio! This will help other's find your work.</h3>
                <div class="filter-section">
@@ -48,7 +54,7 @@
                <br>
                <h3>Click on any of the boxes to upload an image. Click on the text to edit it</h3>
 
-                <!--Project 1 -->
+        <!--Project 1 -->
         <div class="project">
                 {{ templateForm.project1Title }}
             <div class="final-image">
@@ -101,11 +107,11 @@
         <!--Project 3-->
         <div class="project">
                 {{ templateForm.project3Title }}
-                {{ templateForm.p3Explanation }}
             <div class="final-image">
                 {{ templateForm.p3FinalImg }}
             </div>
             {{ templateForm.p3FinalCap }}
+            {{ templateForm.p3Explanation }}
             <h3> Progress: </h3>
             <div class = "progress-images">
                 <div class="progress-image">
@@ -123,7 +129,7 @@
             </div>
         </div>
 
-               <!--Project 4-->
+        <!--Project 4-->
         <div class="project">
                 {{ templateForm.project4Title }}
             <div class="final-image">
@@ -147,29 +153,30 @@
                 </div>
             </div>
         </div>
-               <button type="submit">Create</button>
-            </form>
-        </div>
+        <center> <button type="submit">Create</button> </center>
+    </form>
+    </div>
+</main>
 
-    </main>
+        <br><br><br>
+        <footer>
+            <div class="footer">
+                <!--1st div-->
+                <div class="container--footer">
+                    <!--<h2 class="sr-only">Site footer</h2>-->
+                    <!--2nd div-->
+                    <nav class="footer--nav">
+                        <!--<h3 class="sr-only">Footer navigation</h3>-->
+                        <ul>
+                            <li><a href="{% url 'explore' %}">Explore</a></li>
+                            <li><a href="{% url 'main' %}">Profile</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
+            </div><br><br>
+        </footer>
 
-    <footer>
-        <div class="footer">
-            <!--1st div-->
-            <div class="container--footer">
-                <!--<h2 class="sr-only">Site footer</h2>-->
-                <!--2nd div-->
-                <nav class="footer--nav">
-                    <!--<h3 class="sr-only">Footer navigation</h3>-->
-                    <ul>
-                        <li><a href="{% url 'explore' %}">Explore</a></li>
-                        <li><a href="{% url 'main' %}">Profile</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <p class="copyright">Copyright &copy 2024 Artfolio. All rights reserved.</p>
-        </div><br><br>
-    </footer>
+    </body>
 
-</body>
 </html>

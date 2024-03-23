@@ -1,4 +1,8 @@
 /*Explore Page Navigation*/
+    body
+    {
+        overflow-x: hidden;
+    }
     .info
     {
         display: flex;
@@ -19,7 +23,7 @@
         display: flex;
         justify-content: center;
         font-family: 'Gill Sans', serif;
-        font-size: 18px;
+        font-size: 25px;
     }
 
     .filters
@@ -28,7 +32,7 @@
         flex-direction: row;
         gap: 30px;
         justify-content: center;
-        padding-top: 20px;
+        padding-top: 15px;
         padding-bottom: 10px;
         border-bottom: 2px black;
     }
@@ -37,16 +41,13 @@
     {
         background-color: #fff;
         color: black;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 12px 20px;
         border-radius: 30px;
         border-style: solid;
         border-color: black;
         border-width: 2px;
         font-family: 'Gill Sans', serif;
-        font-size: 15px;
+        font-size: 20px;
         transition: 0.5s;
     }
 
@@ -71,35 +72,20 @@
     }
 /*End of Explore Page Navigation*/
 
-/*Footer*/
-    footer
+/*Responsiveness*/
+    @media (max-width: 515px)
     {
-        background-color: #000;
-        color: #fff;
-        padding: 10px 10px;
-        text-align: center;
-        width: 100%;
-        font-family: 'Gill Sans', sans-serif;
+        button
+        {
+            background-color: #fff;
+            color: black;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            font-family: 'Gill Sans', serif;
+            font-size: 15px;
+            transition: 0.5s;
+        }
     }
-
-    .footer--nav ul {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        color: #fff;
-        gap: 1rem;
-        list-style-type: none;
-        font-family: 'Gill Sans', sans-serif;
-    }
-
-    .footer--nav ul li a
-    {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .footer--nav ul li a:hover
-    {
-        text-decoration-line: underline;
-    }
-/*End of footer*/
