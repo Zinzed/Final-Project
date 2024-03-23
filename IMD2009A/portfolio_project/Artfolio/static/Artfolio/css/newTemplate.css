@@ -18,7 +18,7 @@ h1 {
     font-size: 24px;
 }
 h3 {
-    margin-left: 16px;
+    margin-left: 100px;
 }
 
 /* Paragraph styles */
@@ -163,16 +163,16 @@ button:hover {
     cursor: pointer;
 
 
-/* Media Query for Tablet */
-@media screen and (min-device-width: 768px) {
-    .template--form {
-    height: 800px;
-}
-}
-/* Media Query for Desktop */
-@media only screen and (min-width: 1020px) {
-.template--form {
-    height: 400px;
-}
-
+    /* Media Query for Tablet */
+    @media screen and (min-device-width: 768px) {
+        .template--form {
+            height: 800px;
+        }
+    }
+    /* Media Query for Desktop */
+    @media only screen and (min-width: 1020px) {
+        .template--form {
+            height: 400px;
+        }
+    }
 }
