@@ -76,6 +76,22 @@
         color: white;
     }
 
+    .Images
+    {
+        columns: auto 4;
+    }
+
+    .Images ul
+    {
+        text-align: center;
+    }
+
+    .Images li
+    {
+        list-style-type: none;
+        list-style-position: inside;
+        padding-bottom: 5rem;
+    }
 
     hr
     {
