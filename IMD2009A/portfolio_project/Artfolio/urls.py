@@ -11,4 +11,6 @@ urlpatterns = [
     path('newTemplate', views.newTemplate, name='newTemplate'),
     path('editTemplate/<int:templateId>', views.editTemplate, name='editTemplate'),
     path('explore', views.explore, name='explore'),
+    path('exploreFiltered/<int:filterTagId>', views.exploreFiltered, name='exploreFiltered'),
+
 ]

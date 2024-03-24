@@ -14,7 +14,6 @@
         <header class="header">
             <div class="header-container">
                 <img src="static/Artfolio/Images/artfolio-logo.png" alt="Artfolio Logo" class="logo">
-                <link rel="stylesheet" href="header.css"/>
 
                 <div class="explore-link">
                     <a href="{% url 'explore' %}">Explore</a>
@@ -34,10 +33,9 @@
                 <h1 class="title">Explore</h1>
                 <p class="dir">Take a look at other people's work!</p>
                 <div class="filters">
-                    <button type="submit">All</button>
-                    <button type="submit">Cartoon</button>
-                    <button type="submit">Realism</button>
-                    <button type="submit">Colourful</button>
+                    {% for filterTag in filterTags %}
+                    <a href="{% url 'exploreFiltered' filterTag.id %}">{{ filterTag.name }}</a>
+                    {% endfor %}
                 </div>
                 <hr>
             </div>
@@ -45,7 +43,22 @@
 
             <!--Images-->
             <div class="Images">
-
+                {% for portfolio in portfolios %}
+                    <ul>
+                        <li>
+                           <img src="{{ portfolio.p1FinalImg.url }}"/>
+                        </li>
+                        <li>
+                           <img src="{{ portfolio.p2FinalImg.url }}"/>
+                        </li>
+                        <li>
+                           <img src="{{ portfolio.p3FinalImg.url }}"/>
+                        </li>
+                        <li>
+                           <img src="{{ portfolio.p4FinalImg.url }}"/>
+                        </li>
+                    </ul>
+                {% endfor %}
             </div>
             <!--End of Images-->
 
