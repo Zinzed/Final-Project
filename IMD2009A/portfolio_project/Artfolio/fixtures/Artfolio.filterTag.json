@@ -1,0 +1,72 @@
+[
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 1,
+    "fields": {
+      "name": "Animation"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 2,
+    "fields": {
+      "name": "Graphic Design"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 3,
+    "fields": {
+      "name": "Game Design"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 4,
+    "fields": {
+      "name": "Fashion"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 5,
+    "fields": {
+      "name": "Illustration"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 6,
+    "fields": {
+      "name": "3D Modelling"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 7,
+    "fields": {
+      "name": "Architecture"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 8,
+    "fields": {
+      "name": "Interior Design"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 9,
+    "fields": {
+      "name": "Industrial Design"
+    }
+  },
+  {
+    "model": "Artfolio.filtertag",
+    "pk": 10,
+    "fields": {
+      "name": "UI/UX"
+    }
+  }
+]
