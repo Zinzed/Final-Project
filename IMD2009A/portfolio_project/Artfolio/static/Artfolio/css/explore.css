@@ -59,17 +59,8 @@
         transform: scale(1.1);
     }
 
-    .filters a:active
-    {
-        background-color: black;
-        color: white;
-    }
-    .filters a:focus
-    {
-        background-color: black;
-        color: white;
-    }
-
+    .filters a:active,
+    .filters a:focus,
     .filters .selected
     {
         background-color: black;
