@@ -100,4 +100,4 @@ def explore(request):
 def exploreFiltered(request, filterTagId):
     filterTags = filterTag.objects.all
     portfolios = template.objects.filter(filterTags=filterTagId)
-    return render(request, 'explore.html', {'portfolios': portfolios, 'filterTags': filterTags})
+    return render(request, 'explore.html', {'portfolios': portfolios, 'filterTags': filterTags, 'filterTagId': filterTagId})
