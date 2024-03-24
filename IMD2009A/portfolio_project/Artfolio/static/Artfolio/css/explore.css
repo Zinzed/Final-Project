@@ -34,15 +34,15 @@
         justify-content: center;
         padding-top: 15px;
         padding-bottom: 10px;
-        border-bottom: 2px black;
     }
 
 
     .filters a
     {
+        flex-shrink: 0;
         background-color: #fff;
         color: black;
-        padding: 12px 20px;
+        padding: 10px 18px;
         border-radius: 30px;
         border-style: solid;
         border-color: black;
@@ -59,17 +59,8 @@
         transform: scale(1.1);
     }
 
-    .filters a:active
-    {
-        background-color: black;
-        color: white;
-    }
-    .filters a:focus
-    {
-        background-color: black;
-        color: white;
-    }
-
+    .filters a:active,
+    .filters a:focus,
     .filters .selected
     {
         background-color: black;
@@ -102,19 +93,18 @@
 /*End of Explore Page Navigation*/
 
 /*Responsiveness*/
-    @media (max-width: 515px)
+    @media (max-width: 1476px)
     {
-        button
+        .filters
         {
-            background-color: #fff;
-            color: black;
-            padding: 12px 20px;
-            border-radius: 30px;
-            border-style: solid;
-            border-color: black;
-            border-width: 2px;
-            font-family: 'Gill Sans', serif;
-            font-size: 15px;
-            transition: 0.5s;
+            overflow-x: auto;
+            width: 100%
+        }
+
+        .filters a
+        {
+            padding: 8px 16px;
+            font-size: 20px;
         }
     }
+
