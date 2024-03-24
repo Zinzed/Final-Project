@@ -37,7 +37,8 @@
         border-bottom: 2px black;
     }
 
-    button
+
+    .filters a
     {
         background-color: #fff;
         color: black;
@@ -49,18 +50,47 @@
         font-family: 'Gill Sans', serif;
         font-size: 20px;
         transition: 0.5s;
+        text-decoration: none;
     }
 
-    button:hover
+    .filters a:hover
     {
         background-color:#9a9a9a;
         transform: scale(1.1);
     }
 
-    button:active,
-    button:focus
-    {        background-color: black;
+    .filters a:active
+    {
+        background-color: black;
         color: white;
+    }
+    .filters a:focus
+    {
+        background-color: black;
+        color: white;
+    }
+
+    .filters .selected
+    {
+        background-color: black;
+        color: white;
+    }
+
+    .Images
+    {
+        columns: auto 4;
+    }
+
+    .Images ul
+    {
+        text-align: center;
+    }
+
+    .Images li
+    {
+        list-style-type: none;
+        list-style-position: inside;
+        padding-bottom: 5rem;
     }
 
     hr

@@ -2,7 +2,7 @@ import logging
 
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .models import template
+from .models import template, filterTag
 from .forms import templateForm, userForm, loginForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
@@ -91,6 +91,13 @@ def LandingPage(request):
     return render(request, 'LandingPage.html')
 
 
-def explore (request):
-    return render(request, 'explore.html')
+def explore(request):
+    filterTags = filterTag.objects.all
+    portfolios = template.objects.all
+    return render(request, 'explore.html', {'portfolios': portfolios, 'filterTags': filterTags})
 
+
+def exploreFiltered(request, filterTagId):
+    filterTags = filterTag.objects.all
+    portfolios = template.objects.filter(filterTags=filterTagId)
+    return render(request, 'explore.html', {'portfolios': portfolios, 'filterTags': filterTags, 'filterTagId': filterTagId})
