@@ -50,6 +50,10 @@ body {
 /*}*/
 /* End of Navigation Bar */
 
+h2 {
+   margin-top:40px;
+}
+
 p {
     font-size: 14px;
 }
