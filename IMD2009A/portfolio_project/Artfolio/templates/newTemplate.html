@@ -36,7 +36,6 @@
             <div class="template--info">
                 <h1>Create your portfolio!</h1>
                 <a href="{% url 'selectTemplate' %}" class="cancel-link">Cancel</a>
-                <br><br>
             </div>
 
             <form method="post" enctype="multipart/form-data">
@@ -62,7 +61,7 @@
                             {{ templateForm.p1FinalCap }}
                             {{ templateForm.p1Explanation }}
 
-                            <h3> Progress: </h3>
+                            <h3 class="progress"> Progress: </h3>
                             <div class = "progress-images">
                                 <div class="progress-image">
                                     {{ templateForm.p1ProgressImg1 }}
@@ -88,7 +87,7 @@
                             {{ templateForm.p2FinalCap }}
                             {{ templateForm.p2Explanation }}
 
-                            <h3> Progress: </h3>
+                            <h3 class="progress"> Progress: </h3>
                             <div class = "progress-images">
                                 <div class="progress-image">
                                     {{ templateForm.p2ProgressImg1 }}
@@ -113,7 +112,7 @@
                             </div>
                             {{ templateForm.p3FinalCap }}
                             {{ templateForm.p3Explanation }}
-                            <h3> Progress: </h3>
+                            <h3 class="progress"> Progress: </h3>
                             <div class = "progress-images">
                                 <div class="progress-image">
                                     {{ templateForm.p3ProgressImg1 }}
@@ -138,7 +137,7 @@
                             </div>
                             {{ templateForm.p4FinalCap }}
                             {{ templateForm.p4Explanation }}
-                            <h3> Progress: </h3>
+                            <h3 class="progress"> Progress: </h3>
                             <div class = "progress-images">
                                 <div class="progress-image">
                                     {{ templateForm.p4ProgressImg1 }}

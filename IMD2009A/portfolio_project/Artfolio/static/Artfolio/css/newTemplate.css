@@ -1,4 +1,4 @@
-/* Resetting margins and padding */
+ /* Resetting margins and padding */
 body, h1, p, ul, li {
     /*margin: 0;*/
     /*padding: 0;*/
@@ -15,9 +15,11 @@ body {
 
 /* Heading styles */
 h1 {
-    font-size: 32px;
+    font-size: 40px;
 }
+
 h3 {
+    font-size: 25px;
 }
 
 /* Paragraph styles */
@@ -39,7 +41,7 @@ p {
 .template--form {
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    height: 1500px;
+    height: 1300px;
     /*width: 90%;*/
     overflow-y: auto;
     display: flex;
@@ -66,7 +68,7 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    font-size: 20px;
+    font-size: 35px;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -75,16 +77,20 @@ input[type=text] {
 
 /* Explanation text field styles */
 input[type=text]:nth-child(4) {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
 /* Caption text field styles */
 input[type=text]:nth-child(3n + 2),
 input[type=text]:nth-child(3n + 3) {
-    font-size: 0.8rem;
+    font-size: 18px;
     font-weight: 400;
     color: dimgrey;
+}
+
+.progress {
+    margin-left: 14px;
 }
 
 /* Progress images */
@@ -116,7 +122,7 @@ input[type=file] {
 
 /* Cancel link styles */
 .cancel-link {
-    font-size: 1em;
+    font-size: 1.6em;
     background-color: #000;
     color: #ffffff;
     text-decoration: none;
@@ -154,7 +160,7 @@ input::file-selector-button:hover {
 
 /* General button styles */
 button {
-    font-size: 1em;
+    font-size: 1.6em;
     background-color: #44bba4;
     color: #ffffff;
     border: none;
@@ -169,18 +175,47 @@ button {
 button:hover {
     background-color: #5ba597;
     cursor: pointer;
-
-
-    /* Media Query for Tablet */
-    @media screen and (min-device-width: 768px) {
-        .template--form {
-            height: 800px;
-        }
-    }
-    /* Media Query for Desktop */
-    @media only screen and (min-width: 1020px) {
-        .template--form {
-            height: 400px;
-        }
-    }
 }
+
+ /* Media Query for Tablet */
+ @media screen and (min-device-width: 768px) {
+     .template--form {
+         height: 600px;
+     }
+
+ }
+ /* Media Query for Desktop */
+ @media only screen and (min-width: 1020px) {
+     .template--form {
+         height: 400px;
+     }
+
+     h1 {
+         font-size: 32px;
+     }
+
+     h3 {
+         font-size: 1.17em;
+     }
+
+     input[type=text] {
+         font-size: 20px;
+     }
+
+     input[type=text]:nth-child(4) {
+         font-size: 1rem;
+     }
+
+     input[type=text]:nth-child(3n + 2), input[type=text]:nth-child(3n + 3) {
+         font-size: 0.8rem;
+     }
+
+     button {
+         font-size: 1em;
+     }
+
+     .cancel-link {
+         font-size: 1em;
+     }
+
+ }
