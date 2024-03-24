@@ -69,12 +69,8 @@
 
     .Images
     {
-        columns: auto 4;
-    }
-
-    .Images ul
-    {
-        text-align: center;
+        columns: 20rem 4;
+        margin: 2rem;
     }
 
     .Images li
@@ -82,6 +78,11 @@
         list-style-type: none;
         list-style-position: inside;
         padding-bottom: 5rem;
+    }
+
+    .Images img
+    {
+        max-width: 20rem;
     }
 
     hr
