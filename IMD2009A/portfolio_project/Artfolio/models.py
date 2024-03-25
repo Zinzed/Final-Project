@@ -28,6 +28,7 @@ class filterTag(models.Model):
 from django.contrib.auth.models import User
 from django.db import models
 class template(models.Model):
+
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     filterTags = models.ManyToManyField(to=filterTag, related_name="templates", blank=True)
 
