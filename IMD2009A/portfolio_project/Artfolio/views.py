@@ -11,7 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def main(request):
-    myTemplate = template.objects
+    myTemplate = template.objects.first()
     if myTemplate is None:
         return render(request, 'firstMain.html')
     else:
