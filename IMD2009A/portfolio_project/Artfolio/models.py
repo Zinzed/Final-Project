@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from PIL import Image
 
@@ -28,8 +29,8 @@ class filterTag(models.Model):
 from django.contrib.auth.models import User
 from django.db import models
 class template(models.Model):
-
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     filterTags = models.ManyToManyField(to=filterTag, related_name="templates", blank=True)
 
     project1Title = models.CharField(max_length=100, default="Project 1 Title")
