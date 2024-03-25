@@ -30,7 +30,7 @@
 {
     display: flex;
     justify-content: center;
-    font-family: 'Gill Sans', serif;
+    font-family: 'Gill Sans', sans-serif;
     font-size: 20px;
     padding: 0px 50px 0px 50px;
     text-align: center;
@@ -64,7 +64,7 @@
     text-decoration: none;
     list-style-type: none;
     color:black;
-    font-family: 'Gill Sans', serif;
+    font-family: 'Gill Sans', sans-serif;
     font-size: 25px;
     padding: 20px;
 }
@@ -86,7 +86,7 @@
     padding-right: 15px;
     padding-top: 10px;
     justify-content: center;
-    font-family: 'Gill Sans', serif;
+    font-family: 'Gill Sans', sans-serif;
 }
 /*End of Main*/
 

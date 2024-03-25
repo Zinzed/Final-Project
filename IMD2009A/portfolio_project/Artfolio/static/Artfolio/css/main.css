@@ -349,6 +349,14 @@ footer {
     .summary {
         max-width: 400px;
     }
+
+    .progress-images {
+        width:1000px;
+    }
+
+    .portfolio-info {
+        height:1000px;
+    }
 }
 
 .portfolio-info {
@@ -361,6 +369,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height:450px;
 
 }
 .final-image, .progress-image {
