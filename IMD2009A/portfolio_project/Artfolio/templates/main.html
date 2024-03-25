@@ -55,6 +55,7 @@
             </div>
         </section>
 
+       
         <!--Portfolio section-->
         <section>
             <div class ="sub--section">
@@ -74,13 +75,6 @@
                 </div>
             </header><br><br>
 
-            <!--My work section-->
-
-            <div id="content1" >
-                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><span>Edit portfolio</span></a>
-            </div>
-
-
             <!--Contact me section-->
             <div id="content3" style="display: none;">
                 <form action="/submit-form" method="POST">
@@ -93,6 +87,127 @@
                 <input type="submit" value="Send">
             </form><br><br>
             </div>
+            
+            <!--My work section-->
+
+            
+                {% if myTemplate %}
+                <!-- Display Portfolio Information -->
+                    
+                    <div class="portfolio-info">
+                    
+                        <div class="project">
+                            <h2>Project 1 Title: {{ myTemplate.project1Title }}</h2>
+                            <div class="final-image">
+                                <img src="{{ myTemplate.p1FinalImg.url }}" alt="Project Final Image" style="width:100%;max-width:600px;">
+                            </div>
+                           <br> {{ myTemplate.p1FinalCap }}<br><br>
+                            {{ myTemplate.p1Explanation }}<br> <br>
+
+                            <h3 class="progress"> Progress: </h3>
+                            <div class = "progress-images">
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p1ProgressImg1.url }}" alt="Project 1 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p1ProgressCap1 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p1ProgressImg2.url }}" alt="Project 1 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p1ProgressCap2 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p1ProgressImg3.url }}" alt="Project 1 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p1ProgressCap3 }}
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="project">
+                            <h2>Project 2 Title: {{ myTemplate.project2Title }}</h2>
+                            <div class="final-image">
+                                <img src="{{ myTemplate.p2FinalImg.url }}" alt="Project Final Image" style="width:100%;max-width:600px;">
+                            </div>
+                            <br>{{ myTemplate.p2FinalCap }}<br><br>
+                            {{ myTemplate.p2Explanation }}<br>
+
+                            <h3 class="progress"> Progress: </h3>
+                            <div class = "progress-images">
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p2ProgressImg1.url }}" alt="Project 2 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p2ProgressCap1 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p2ProgressImg2.url }}" alt="Project 2 Progress Image" style="width:100%;max-width:600px;">
+                                   <br> {{ myTemplate.p2ProgressCap2 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p2ProgressImg3.url }}" alt="Project 2 Progress Image" style="width:100%;max-width:600px;">
+                                  <br>  {{ myTemplate.p2ProgressCap3 }}
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="project">
+                            <h2>Project 3 Title: {{ myTemplate.project3Title }}</h2>
+                            <div class="final-image">
+                                <img src="{{ myTemplate.p3FinalImg.url }}" alt="Project Final Image" style="width:100%;max-width:600px;">
+                            </div>
+                            <br>{{ myTemplate.p3FinalCap }}<br><br>
+                            {{ myTemplate.p3Explanation }}<br><br>
+
+                            <h3 class="progress"> Progress: </h3>
+                            <div class = "progress-images">
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p3ProgressImg1.url }}" alt="Project 3 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p3ProgressCap1 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p3ProgressImg2.url }}" alt="Project 3 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p3ProgressCap2 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p3ProgressImg3.url }}" alt="Project 3 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p3ProgressCap3 }}
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="project">
+                            <h2>Project 4 Title: {{ myTemplate.project4Title }}</h2>
+                            <div class="final-image">
+                                <img src="{{ myTemplate.p4FinalImg.url }}" alt="Project Final Image" style="width:100%;max-width:600px;">
+                            </div>
+                            <br>{{ myTemplate.p4FinalCap }}<br><br>
+                            {{ myTemplate.p4Explanation }}<br><br>
+
+                            <h3 class="progress"> Progress: </h3>
+                            <div class = "progress-images">
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p4ProgressImg1.url }}" alt="Project 4 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p4ProgressCap1 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p4ProgressImg2.url }}" alt="Project 4 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p4ProgressCap2 }}
+                                </div>
+                                <div class="progress-image">
+                                    <img src="{{ myTemplate.p4ProgressImg3.url }}" alt="Project 4 Progress Image" style="width:100%;max-width:600px;">
+                                    <br>{{ myTemplate.p4ProgressCap3 }}
+                                </div>
+                            </div>
+                        </div>
+                
+                    
+                </div>
+                {% else %}
+                 <center>   <p>You have not created a portfolio yet.</p></center>
+                {% endif %} 
+            <div id="content1" >
+                <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><span>Edit portfolio</span></a>
+               </div>
+            
+                    
+
+            
                 <br><br>
             </div>
         </section><br><br>

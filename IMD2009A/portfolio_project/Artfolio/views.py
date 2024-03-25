@@ -15,7 +15,7 @@ def main(request):
     if myTemplate is None:
         return render(request, 'firstMain.html')
     else:
-        return render(request, 'main.html')
+        return render(request, 'main.html', {'myTemplate': myTemplate})
 
 
 def selectTemplate(request):
@@ -59,7 +59,7 @@ def register(request):
         form = userForm(request.POST)
         if form.is_valid():
             user = form.save()
-            template.objects.create(user=user)
+
             return redirect("login")
 
     context = {'registerForm': form}
@@ -81,9 +81,11 @@ def login(request):
             if user is not None:
 
                 auth.login(request, user)
-                if not template.objects.filter(user=user).exists():
-                    template.objects.create(user=user)
-                return redirect("main")
+                myTemplate = template.objects.filter(user=user)
+                if myTemplate is None:
+                    return render(request, 'firstMain.html')
+                else:
+                    return render(request, 'main.html', {'myTemplate': myTemplate})
 
     context = {'loginForm':form}
 
