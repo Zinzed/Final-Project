@@ -87,15 +87,16 @@
                 <input type="submit" value="Send">
             </form><br><br>
             </div>
-            
-            <!--My work section-->
 
-            
+            <div id="content1" >
+                <!--My work section-->
+
+
                 {% if myTemplate %}
                 <!-- Display Portfolio Information -->
-                    
+
                     <div class="portfolio-info">
-                    
+
                         <div class="project">
                             <h2>Project 1 Title: {{ myTemplate.project1Title }}</h2>
                             <div class="final-image">
@@ -120,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="project">
                             <h2>Project 2 Title: {{ myTemplate.project2Title }}</h2>
                             <div class="final-image">
@@ -145,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="project">
                             <h2>Project 3 Title: {{ myTemplate.project3Title }}</h2>
                             <div class="final-image">
@@ -170,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="project">
                             <h2>Project 4 Title: {{ myTemplate.project4Title }}</h2>
                             <div class="final-image">
@@ -195,13 +196,12 @@
                                 </div>
                             </div>
                         </div>
-                
-                    
+
+
                 </div>
                 {% else %}
                  <center>   <p>You have not created a portfolio yet.</p></center>
-                {% endif %} 
-            <div id="content1" >
+                {% endif %}
                 <a class="btn--edit--portfolio" href="{% url 'selectTemplate' %}"><span>Edit portfolio</span></a>
                </div>
             
@@ -234,9 +234,9 @@
         </div>
     </footer>
 
-
 <!--JavaScript-->
 <script>
+
     function showContent(contentNumber) {
       // Hide all content divs
       var allContentDivs = document.querySelectorAll('[id^="content"]');
