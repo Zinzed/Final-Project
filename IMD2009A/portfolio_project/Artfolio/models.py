@@ -28,7 +28,7 @@ class filterTag(models.Model):
 from django.contrib.auth.models import User
 from django.db import models
 class template(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     filterTags = models.ManyToManyField(to=filterTag, related_name="templates", blank=True)
 
     project1Title = models.CharField(max_length=100, default="Project 1 Title")
