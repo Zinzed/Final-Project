@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import template, filterTag
 from .forms import templateForm, userForm, loginForm
-from django.contrib.auth.models import auth
+from django.contrib.auth.models import auth, User
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
@@ -58,7 +58,8 @@ def register(request):
     if request.method == "POST":
         form = userForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            template.objects.create(user=user)
             return redirect("login")
 
     context = {'registerForm': form}
@@ -80,6 +81,8 @@ def login(request):
             if user is not None:
 
                 auth.login(request, user)
+                if not template.objects.filter(user=user).exists():
+                    template.objects.create(user=user)
                 return redirect("main")
 
     context = {'loginForm':form}
