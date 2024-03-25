@@ -47,7 +47,7 @@
         border-style: solid;
         border-color: black;
         border-width: 2px;
-        font-family: 'Gill Sans', serif;
+        font-family: 'Gill Sans', sans-serif;
         font-size: 20px;
         transition: 0.5s;
         text-decoration: none;
