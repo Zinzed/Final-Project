@@ -11,7 +11,8 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def main(request):
-    myTemplate = template.objects.first()
+    myTemplate = template.objects.filter(user=request.user).first()
+    # myTemplate = template.objects.first()
     if myTemplate is None:
         return render(request, 'firstMain.html')
     else:
@@ -19,7 +20,7 @@ def main(request):
 
 
 def selectTemplate(request):
-    myTemplate = template.objects.first()
+    myTemplate = template.objects.filter(user=request.user).first()
     if myTemplate is None:
         return render(request, 'selectTemplate.html')
     else:
@@ -32,14 +33,17 @@ def newTemplate(request):
     if request.method == "POST":
         form = templateForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            myTemplate = form.save(commit=False)
+            myTemplate.user = request.user
+            myTemplate.save()
             return render(request, 'main.html', {'templateForm': form, 'imgObj': form.instance})
         else:
             form = templateForm()
     return render(request, 'newTemplate.html', {'templateForm': form})
 
+
 def editTemplate(request, templateId):
-    myTemplate = template.objects.get(pk=templateId)
+    myTemplate = template.objects.filter(user=request.user).get(pk=templateId)
     form = templateForm(instance=myTemplate)
 
     if request.method == "POST":
@@ -58,8 +62,8 @@ def register(request):
     if request.method == "POST":
         form = userForm(request.POST)
         if form.is_valid():
-            user = form.save()
-
+            # user = form.save()
+            form.save()
             return redirect("login")
 
     context = {'registerForm': form}
@@ -68,27 +72,19 @@ def register(request):
   
   
 def login(request):
-
     form = loginForm()
     if request.method == "POST":
         form = loginForm(request, data=request.POST)
         if form.is_valid():
             username = request.POST.get('username')
             password = request.POST.get('password')
-
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-
                 auth.login(request, user)
-                myTemplate = template.objects.filter(user=user)
-                if myTemplate is None:
-                    return render(request, 'firstMain.html')
-                else:
-                    return render(request, 'main.html', {'myTemplate': myTemplate})
+                return redirect("main")
 
-    context = {'loginForm':form}
-
+    context = {'loginForm': form}
     return render(request, 'login.html', context)
   
 
